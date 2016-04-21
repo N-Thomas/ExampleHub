@@ -83,7 +83,7 @@ class Question
             try{
                 echo "creating new submission<br>";
                 $stmt = $conn->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
-                
+                $conn->beginTransaction();
                 $stmt->bindValue(1, $this->title);
                 $stmt->bindValue(2, $this->category);
                 $stmt->bindValue(3, 0);
