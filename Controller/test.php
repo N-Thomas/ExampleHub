@@ -28,9 +28,10 @@ echo "title: " . $mainQuestion->title . "<br>";
 echo "body: " . $mainQuestion->body . "<br>";
 echo "solved: " . $solved . "<br><br><br>";
 
+$response = $mainQuestion->submit();
 
-if($mainQuestion->submit()){
-	echo "Successful submission";
+if($response){
+	echo "Successful submission " . $response;
 }
 else{
 	echo "Submission failed";
