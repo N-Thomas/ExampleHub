@@ -9,11 +9,12 @@ Example Hub
 require_once '../Model/question.php';
 
 $mainQuestion = new Question();
-$mainQuestion->id = 5;
 $mainQuestion->score = 2;
 $mainQuestion->title = "How do I add?";
 $mainQuestion->body = "I have always wanted to know";
 $mainQuestion->solved = false;
+$mainQuestion->userId = 1;
+$mainQuestion->category = "Science";
 
 $solved = "false";
 if($mainQuestion->solved){
@@ -28,6 +29,8 @@ echo "body: " . $mainQuestion->body . "<br>";
 echo "solved: " . $solved . "<br>";
 echo "</html>";
 
-echo $mainQuestion.submit();
+if($mainQuestion.submit()){
+	echo "\n\nSuccessful submission";
+}
 
 ?>

@@ -11,12 +11,13 @@ require_once 'hidden/db.php';
 
 class Question
 {
-    public $id, $userId, $score, $title, $body, $images, $solved, $answers;
+    public $id, $userId, $category, $score, $title, $body, $images, $solved, $answers;
 
     public function __construct(  ){
         $this->id = -1;
         $this->score = 1;
         $this->title = "";
+        $this->category = "";
         $this->body = "";
         $this->answers = [];
         $this->images = [];
@@ -89,10 +90,12 @@ class Question
             $stmt->bindValue(7, $this->solved);
 
             $stmt->execute();
-            $formId = $db->lastInsertId();
+            $submittedId = $db->lastInsertId();
             $db->commit();
 
-            return $formId;
+            $this->id = $submittedId;
+
+            return $submittedId;
             }
             catch (PDOException $ex){
                 return false;
