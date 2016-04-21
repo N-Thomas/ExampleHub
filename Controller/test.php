@@ -26,11 +26,16 @@ echo "id: " . $mainQuestion->id . "<br>";
 echo "score: " . $mainQuestion->score . "<br>";
 echo "title: " . $mainQuestion->title . "<br>";
 echo "body: " . $mainQuestion->body . "<br>";
-echo "solved: " . $solved . "<br>";
-echo "</html>";
+echo "solved: " . $solved . "<br><br><br>";
+
 
 if($mainQuestion.submit()){
-	echo "\n\nSuccessful submission";
+	echo "Successful submission";
 }
+else{
+	echo "Submission failed"
+}
+
+echo "</html>";
 
 ?>
