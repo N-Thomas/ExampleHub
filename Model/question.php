@@ -82,8 +82,9 @@ class Question
         if($this->id == -1){
             try{
                 echo "creating new submission<br>";
-                $stmt = $conn->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
-                $conn->beginTransaction();
+                $db = connect();
+                $stmt = $db->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
+                $db->beginTransaction();
                 $stmt->bindValue(1, $this->title);
                 $stmt->bindValue(2, $this->category);
                 $stmt->bindValue(3, 0);
@@ -93,8 +94,8 @@ class Question
                 $stmt->bindValue(7, $this->solved);
 
                 $stmt->execute();
-                $submittedId = $conn->lastInsertId();
-                $conn->commit();
+                $submittedId = $db->lastInsertId();
+                $db->commit();
 
                 $this->id = $submittedId;
                 echo $submittedId . "<br>";
