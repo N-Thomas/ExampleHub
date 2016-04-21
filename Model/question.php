@@ -27,22 +27,22 @@ class Question
 
     /* Fetches the information from a specific question from the db */
     public function populate( $fetch ){
-        // $this->id = $fetch;
+        $this->id = $fetch;
 
-        // //Lookup all info about question
-        // $query = "SELECT * FROM Post WHERE id='" . $id . "'";
+        //Lookup all info about question
+        $query = "SELECT * FROM Post WHERE id='" . $this->id . "'";
 
-        // $statement = $db->prepare( $query );
-        // $statement->execute(  );
+        $statement = $db->prepare( $query );
+        $statement->execute(  );
 
-        // $result    = $statement->fetch(PDO::FETCH_ASSOC);
+        $result    = $statement->fetch(PDO::FETCH_ASSOC);
 
-        // $this->userId = $result['UserID'];
-        // $this->score = $result['Score'];
-        // $this->title = $result['Title'];
-        // $this->body = $result['Text'];
-        // $this->solved = $result['Solved'];
-        // $this->date = $result['Date'];
+        $this->userId = $result['UserID'];
+        $this->score = $result['Score'];
+        $this->title = $result['Title'];
+        $this->body = $result['Text'];
+        $this->solved = $result['Solved'];
+        $this->date = $result['Date'];
 
         // //lookup answers associated with question
         // $query = "SELECT * FROM Answers WHERE id='" . $id . "'";
@@ -75,14 +75,14 @@ class Question
 
     /* Submits a created question to the database */
     function submit (){
-        echo "started submission<br>";
         if($this->title == "" || $this->body == ""){
             return false;
         }
         if($this->id == -1){
             try{
-                echo "creating new submission<br>";
+
                 require_once 'hidden/db.php';
+
                 $stmt = $db->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
                 $db->beginTransaction();
                 $stmt->bindValue(1, $this->title);
@@ -98,7 +98,6 @@ class Question
                 $db->commit();
 
                 $this->id = $submittedId;
-                echo $submittedId . "<br>";
                 return $submittedId;
                 }
                 catch (PDOException $ex){

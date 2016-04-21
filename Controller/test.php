@@ -37,6 +37,16 @@ else{
 	echo "Submission failed";
 }
 
+$pulledQuestion = new Question();
+$pulledQuestion->populate(3);
+
+$mainQuestion = new Question();
+echo "<br><br><br>";
+echo "id: " . $mainQuestion->id . "<br>";
+echo "score: " . $mainQuestion->score . "<br>";
+echo "title: " . $mainQuestion->title . "<br>";
+echo "body: " . $mainQuestion->body . "<br>";
+
 echo "</html>";
 
 ?>
