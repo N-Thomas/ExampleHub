@@ -93,8 +93,8 @@ class Question
                 $stmt->bindValue(7, $this->solved);
 
                 $stmt->execute();
-                $submittedId = $db->lastInsertId();
-                $db->commit();
+                $submittedId = $conn->lastInsertId();
+                $conn->commit();
 
                 $this->id = $submittedId;
                 echo $submittedId . "<br>";
