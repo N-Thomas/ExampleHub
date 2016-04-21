@@ -75,32 +75,34 @@ class Question
 
     /* Submits a created question to the database */
     function submit (){
+        echo "started submission<br>";
         if($this->title == "" || $this->body == ""){
             return false;
         }
         if($this->id == -1){
             try{
-            $stmt = $conn->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
-            
-            $stmt->bindValue(1, $this->title);
-            $stmt->bindValue(2, $this->category);
-            $stmt->bindValue(3, 0);
-            $stmt->bindValue(4, $this->userId);
-            $stmt->bindValue(5, $this->body);
-            $stmt->bindValue(6, $this->score);
-            $stmt->bindValue(7, $this->solved);
+                echo "creating new submission<br>";
+                $stmt = $conn->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
+                
+                $stmt->bindValue(1, $this->title);
+                $stmt->bindValue(2, $this->category);
+                $stmt->bindValue(3, 0);
+                $stmt->bindValue(4, $this->userId);
+                $stmt->bindValue(5, $this->body);
+                $stmt->bindValue(6, $this->score);
+                $stmt->bindValue(7, $this->solved);
 
-            $stmt->execute();
-            $submittedId = $db->lastInsertId();
-            $db->commit();
+                $stmt->execute();
+                $submittedId = $db->lastInsertId();
+                $db->commit();
 
-            $this->id = $submittedId;
-
-            return $submittedId;
-            }
-            catch (PDOException $ex){
-                return false;
-            }
+                $this->id = $submittedId;
+                echo $submittedId . "<br>";
+                return $submittedId;
+                }
+                catch (PDOException $ex){
+                    return false;
+                }
         }
         else{
             //modify/replace old entry
