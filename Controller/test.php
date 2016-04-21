@@ -29,7 +29,7 @@ echo "body: " . $mainQuestion->body . "<br>";
 echo "solved: " . $solved . "<br><br><br>";
 
 
-if($mainQuestion.submit()){
+if($mainQuestion->submit()){
 	echo "Successful submission";
 }
 else{
