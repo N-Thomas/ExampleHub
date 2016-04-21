@@ -105,6 +105,7 @@ class Question
         else{
             //modify/replace old entry
         }
+        return false;
 
     }
 }
