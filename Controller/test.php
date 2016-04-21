@@ -28,7 +28,7 @@ echo "title: " . $mainQuestion->title . "<br>";
 echo "body: " . $mainQuestion->body . "<br>";
 echo "solved: " . $solved . "<br><br><br>";
 
-$response = $mainQuestion->submit();
+//$response = $mainQuestion->submit();
 
 if($response){
 	echo "Successful submission " . $response;
@@ -40,12 +40,11 @@ else{
 $pulledQuestion = new Question();
 $pulledQuestion->populate(3);
 
-$mainQuestion = new Question();
 echo "<br><br><br>";
-echo "id: " . $mainQuestion->id . "<br>";
-echo "score: " . $mainQuestion->score . "<br>";
-echo "title: " . $mainQuestion->title . "<br>";
-echo "body: " . $mainQuestion->body . "<br>";
+echo "id: " . $pulledQuestion->id . "<br>";
+echo "score: " . $pulledQuestion->score . "<br>";
+echo "title: " . $pulledQuestion->title . "<br>";
+echo "body: " . $pulledQuestion->body . "<br>";
 
 echo "</html>";
 
