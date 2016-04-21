@@ -29,6 +29,7 @@ class Question
     public function populate( $fetch ){
         $this->id = $fetch;
 
+        require_once 'hidden/db.php';
         //Lookup all info about question
         $query = "SELECT * FROM Post WHERE id='" . $this->id . "'";
 
