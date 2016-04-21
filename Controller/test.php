@@ -33,7 +33,7 @@ if($mainQuestion.submit()){
 	echo "Successful submission";
 }
 else{
-	echo "Submission failed"
+	echo "Submission failed";
 }
 
 echo "</html>";
