@@ -7,7 +7,7 @@ Example Hub
 */
 
 require_once 'answer.php';
-require_once 'hidden/db.php';
+
 
 class Question
 {
@@ -82,7 +82,7 @@ class Question
         if($this->id == -1){
             try{
                 echo "creating new submission<br>";
-                $db = connect();
+                require_once 'hidden/db.php';
                 $stmt = $db->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
                 $db->beginTransaction();
                 $stmt->bindValue(1, $this->title);
