@@ -4,7 +4,7 @@ $username = "Grad_Application";
 $password = "598254479";
 $dbName = "ExampleHub";
 
-public function connect(){
+function connect(){
 	try{
 	        $conn = new PDO("mysql:host=$serverName;dbname=$dbName", $username, $password);
 	        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
