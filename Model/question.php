@@ -29,7 +29,7 @@ class Question
     public function populate( $fetch ){
         $this->id = $fetch;
 
-        require_once 'hidden/db.php';
+        require 'hidden/db.php';
         //Lookup all info about question
         $query = "SELECT * FROM Post WHERE id='" . $this->id . "'";
 
@@ -82,7 +82,7 @@ class Question
         if($this->id == -1){
             try{
 
-                require_once 'hidden/db.php';
+                require 'hidden/db.php';
 
                 $stmt = $db->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
                 $db->beginTransaction();
