@@ -7,10 +7,11 @@ Example Hub
 */
 
 require_once 'answer.php';
+require_once 'hidden/db.php';
 
 class Question
 {
-    public $id, $score, $title, $body, $images, $solved, $answers;
+    public $id, $userId, $score, $title, $body, $images, $solved, $answers;
 
     public function __construct(  ){
         $this->id = -1;
@@ -19,26 +20,28 @@ class Question
         $this->body = "";
         $this->answers = [];
         $this->images = [];
-        $this->solved = false;
+        $this->solved = 0;
         
     }
 
     /* Fetches the information from a specific question from the db */
     public function populate( $fetch ){
-        $this->id = $fetch;
+        // $this->id = $fetch;
 
-        // Lookup all info about question
-        // $query = "SELECT * FROM Questions WHERE id='" . $id . "'";
+        // //Lookup all info about question
+        // $query = "SELECT * FROM Post WHERE id='" . $id . "'";
 
         // $statement = $db->prepare( $query );
         // $statement->execute(  );
 
         // $result    = $statement->fetch(PDO::FETCH_ASSOC);
 
-        // $this->score = $result['score'];
-        // $this->title = $result['title'];
-        // $this->body = $result['body'];
-        // $this->solved = $result['solved'];
+        // $this->userId = $result['UserID'];
+        // $this->score = $result['Score'];
+        // $this->title = $result['Title'];
+        // $this->body = $result['Text'];
+        // $this->solved = $result['Solved'];
+        // $this->date = $result['Date'];
 
         // //lookup answers associated with question
         // $query = "SELECT * FROM Answers WHERE id='" . $id . "'";
@@ -75,7 +78,25 @@ class Question
             return false;
         }
         if($this->id == -1){
-            //create new entry
+            try{
+            $stmt = $db->prepare("Insert into Post (Title, Category, Parent, UserID, Text, Score, Solved, Date) values (?,?,?,?,?,?,?,now())")
+            $stmt->bindValue(1, $this->title);
+            $stmt->bindValue(2, $this->category);
+            $stmt->bindValue(3, 0);
+            $stmt->bindValue(4, $this->userId);
+            $stmt->bindValue(5, $this->body);
+            $stmt->bindValue(6, $this->score);
+            $stmt->bindValue(7, $this->solved);
+
+            $stmt->execute();
+            $formId = $db->lastInsertId();
+            $db->commit();
+
+            return $formId;
+            }
+            catch (PDOException $ex){
+                return false;
+            }
         }
         else{
             //modify/replace old entry
