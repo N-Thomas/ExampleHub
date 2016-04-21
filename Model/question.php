@@ -79,7 +79,7 @@ class Question
         }
         if($this->id == -1){
             try{
-            $stmt = $conn->prepare("Insert into Post (Title, Category, Parent, UserID, Text, Score, Solved, Date) values (?,?,?,?,?,?,?,now())")
+            $stmt = $conn->prepare("Insert into Post (Title, Category, Parent, UserID, Text, Score, Solved, Date) values (?,?,?,?,?,?,?,now())");
             $stmt->bindValue(1, $this->title);
             $stmt->bindValue(2, $this->category);
             $stmt->bindValue(3, 0);
