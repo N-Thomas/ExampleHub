@@ -28,5 +28,6 @@ echo "body: " . $mainQuestion->body . "<br>";
 echo "solved: " . $solved . "<br>";
 echo "</html>";
 
+echo $mainQuestion.submit();
 
 ?>
