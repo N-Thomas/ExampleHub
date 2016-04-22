@@ -52,7 +52,7 @@ foreach($pulledQuestion->children as $child){
     echo "child: " . $child . "<br>";
 }
 
-if($login->registerUser("test2", "test")){
+if(registerUser("test2", "test")){
     echo "Registration Successful";
 }
 else{
