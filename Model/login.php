@@ -12,17 +12,7 @@ class LoginHelpers(){
         require 'hidden/db.php';
 
         try{
-        	
-            $stmt = $db->prepare("insert into User (UserName, Password, Privelages) values(?,?,?)");
-            $db->beginTransaction();
-            $stmt->bindValue(1, $username);
-            $hashedPassword = computeHash($password, makeSalt());
-            $stmt->bindValue(2, $hashedPassword);
-            $stmt->bindValue(3, 0);
-            $stmt->execute();
-            $db->commit();
-            return true;
-
+            
         }
 
         catch (PDOException $ex){
