@@ -1,4 +1,11 @@
 <?php
+/* Nick Thomas
+University of Utah
+cs4540 - Web Systems
+4/17/2016
+Example Hub
+*/
+
 $serverName = "localhost";
 $username = "Grad_Application";
 $password = "598254479";
