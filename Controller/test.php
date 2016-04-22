@@ -15,6 +15,7 @@ $mainQuestion->body = "I have always wanted to know";
 $mainQuestion->solved = false;
 $mainQuestion->userId = 1;
 $mainQuestion->category = "Science";
+$mainQuestion->parent = 3;
 
 $solved = "false";
 if($mainQuestion->solved){
@@ -45,7 +46,10 @@ echo "id: " . $pulledQuestion->id . "<br>";
 echo "score: " . $pulledQuestion->score . "<br>";
 echo "title: " . $pulledQuestion->title . "<br>";
 echo "body: " . $pulledQuestion->body . "<br>";
-echo "children: " . $pulledQuestion->children . "<br>";
+echo "children: " 
+foreach($pulledQuestion->children as $child){
+    echo $child . "<br>";
+} 
 
 echo "</html>";
 
