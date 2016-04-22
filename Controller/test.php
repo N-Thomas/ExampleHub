@@ -7,6 +7,7 @@ Example Hub
 */
 
 require_once '../Model/post.php';
+require_once '../Model/login.php';
 
 $mainQuestion = new Post();
 $mainQuestion->score = 2;
@@ -46,10 +47,18 @@ echo "id: " . $pulledQuestion->id . "<br>";
 echo "score: " . $pulledQuestion->score . "<br>";
 echo "title: " . $pulledQuestion->title . "<br>";
 echo "body: " . $pulledQuestion->body . "<br>";
-echo "children: " . count($pulledQuestion->children);
-// foreach($pulledQuestion->children as $child){
-//     echo $child . "<br>";
-// } 
+echo "children: " . count($pulledQuestion->children) . "<br>";
+foreach($pulledQuestion->children as $child){
+    echo "child: " . $child . "<br>";
+}
+
+if(registerUser("test2", "test")){
+    echo "Registration Successful";
+}
+
+else{
+    echo "Registration failed";
+}
 
 echo "</html>";
 

@@ -7,12 +7,12 @@ Example Hub
 */
 class User
 {
-    public $id, $handle, $score, $privileges, $questions, $answers;
+    public $id, $userName, $score, $privileges, $questions, $answers;
 
     public function __construct(  ){
         $this->id = -1;
         $this->score = -1;
-        $this->handle = "";
+        $this->userName = "";
         $this->questions = [];
         $this->answers = [];
         
@@ -32,7 +32,7 @@ class User
             $result    = $statement->fetch(PDO::FETCH_ASSOC);
 
             $this->id = $result['ID'];
-            $this->handle = $result['UserName'];
+            $this->userName = $result['UserName'];
             $this->privileges = $result['Privelages'];
 
         }
