@@ -12,15 +12,15 @@ class LoginHelpers(){
 
         try{
         	require 'hidden/db.php';
-            $stmt = $db->prepare("insert into User (UserName, Password, Privelages) values(?,?,?)");
-            $db->beginTransaction();
-            $stmt->bindValue(1, $username);
-            $hashedPassword = computeHash($password, makeSalt());
-            $stmt->bindValue(2, $hashedPassword);
-            $stmt->bindValue(3, 0);
-            $stmt->execute();
-            $db->commit();
-            return true;
+            // $stmt = $db->prepare("insert into User (UserName, Password, Privelages) values(?,?,?)");
+            // $db->beginTransaction();
+            // $stmt->bindValue(1, $username);
+            // $hashedPassword = computeHash($password, makeSalt());
+            // $stmt->bindValue(2, $hashedPassword);
+            // $stmt->bindValue(3, 0);
+            // $stmt->execute();
+            // $db->commit();
+            // return true;
 
         }
 
