@@ -7,6 +7,7 @@ Example Hub
 */
 
 require_once '../Model/post.php';
+require_once '../Model/user.php';
 require_once '../Model/login.php';
 
 if(logIn("test2", "test")){

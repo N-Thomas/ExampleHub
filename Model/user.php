@@ -10,12 +10,13 @@ class User
 {
     public $id, $userName, $score, $privileges, $questions, $answers;
 
-    public function __construct(  ){
-        $this->id = -1;
+    public function __construct( $id ){
+        $this->id = $id;
         $this->score = -1;
         $this->userName = "";
         $this->questions = [];
         $this->answers = [];
+        $this->populate( $id );
         
     }
 
@@ -49,7 +50,7 @@ class User
     }
 
     public function getScore(){
-        
+
     }
 
 }
