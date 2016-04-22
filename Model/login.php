@@ -9,8 +9,8 @@ Example Hub
 function logIn( $user, $password){
     try {
         require 'hidden/db.php';
-        $stmt = $db->prepare("SELECT * from User WHERE uid = ?");
-        $stmt->bindValue(1, $username);
+        $stmt = $db->prepare("SELECT * from User WHERE UserName = ?");
+        $stmt->bindValue(1, $user);
         $stmt->execute();
 
         //verify user exists
