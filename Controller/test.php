@@ -29,7 +29,7 @@ echo "title: " . $mainQuestion->title . "<br>";
 echo "body: " . $mainQuestion->body . "<br>";
 echo "solved: " . $solved . "<br><br><br>";
 
-$response = $mainQuestion->submit(3);
+$response = $mainQuestion->submit();
 
 if($response){
 	echo "Successful submission " . $response;
@@ -46,10 +46,10 @@ echo "id: " . $pulledQuestion->id . "<br>";
 echo "score: " . $pulledQuestion->score . "<br>";
 echo "title: " . $pulledQuestion->title . "<br>";
 echo "body: " . $pulledQuestion->body . "<br>";
-echo "children: ";
-foreach($pulledQuestion->children as $child){
-    echo $child . "<br>";
-} 
+echo "children: " . count($pulledQuestion->children);
+// foreach($pulledQuestion->children as $child){
+//     echo $child . "<br>";
+// } 
 
 echo "</html>";
 

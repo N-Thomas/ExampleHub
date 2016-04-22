@@ -87,7 +87,7 @@ class Post
     }
 
     /* Submits a created question to the database */
-    public function submit ( $parent ){
+    public function submit ( ){
         if($this->title == "" || $this->body == ""){
             return false;
         }
@@ -99,7 +99,7 @@ class Post
                 $db->beginTransaction();
                 $stmt->bindValue(1, $this->title);
                 $stmt->bindValue(2, $this->category);
-                $stmt->bindValue(3, $parent);
+                $stmt->bindValue(3, $this->parent);
                 $stmt->bindValue(4, $this->userId);
                 $stmt->bindValue(5, $this->body);
                 $stmt->bindValue(6, $this->score);
