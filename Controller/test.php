@@ -6,9 +6,9 @@ cs4540 - Web Systems
 Example Hub
 */
 
-require_once '../Model/question.php';
+require_once '../Model/post.php';
 
-$mainQuestion = new Question();
+$mainQuestion = new Post();
 $mainQuestion->score = 2;
 $mainQuestion->title = "How do I add?";
 $mainQuestion->body = "I have always wanted to know";
@@ -28,7 +28,7 @@ echo "title: " . $mainQuestion->title . "<br>";
 echo "body: " . $mainQuestion->body . "<br>";
 echo "solved: " . $solved . "<br><br><br>";
 
-$response = $mainQuestion->submit();
+$response = $mainQuestion->submit(3);
 
 if($response){
 	echo "Successful submission " . $response;
@@ -37,7 +37,7 @@ else{
 	echo "Submission failed";
 }
 
-$pulledQuestion = new Question();
+$pulledQuestion = new Post();
 $pulledQuestion->populate(3);
 
 echo "<br><br><br>";
@@ -45,6 +45,7 @@ echo "id: " . $pulledQuestion->id . "<br>";
 echo "score: " . $pulledQuestion->score . "<br>";
 echo "title: " . $pulledQuestion->title . "<br>";
 echo "body: " . $pulledQuestion->body . "<br>";
+echo "children: " . $pulledQuestion->children . "<br>";
 
 echo "</html>";
 

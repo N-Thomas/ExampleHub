@@ -6,9 +6,7 @@ cs4540 - Web Systems
 Example Hub
 */
 
-require_once 'answer.php';
-
-class Question
+class Post
 {
     public $id, $userId, $category, $score, $title, $body, $solved, $children, $parent;
 
@@ -24,39 +22,38 @@ class Question
     }
 
     /* Lookup answers children with post */
-    function getChildren(){
-        if($this->id == -1){
-            return false;
-        }
-        try{
-            require 'hidden/db.php';
+    // function getChildren(){
+    //     if($this->id == -1){
+    //         return false;
+    //     }
+    //     try{
+    //         require 'hidden/db.php';
 
-            $query = "SELECT * FROM Post WHERE Parent='" . $id . "'";
+    //         $query = "SELECT * FROM Post WHERE Parent='" . $id . "'";
 
-            $statement = $db->prepare( $query );
-            $statement->execute(  );
+    //         $statement = $db->prepare( $query );
+    //         $statement->execute(  );
 
-            $result    = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //         $result    = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($result as $row){
-                // $questionAnswer = new Answer();
-                // $questionAnswer.populate( $row['id'] );
-                // array_push($this->children, $questionAnswer);
-                array_push($this->children, $row['id']);
-            }
-        }
-        catch (PDOException $ex){
-            return false;
-        }
-    }
+    //         foreach ($result as $row){
+    //             // $questionAnswer = new Answer();
+    //             // $questionAnswer.populate( $row['id'] );
+    //             // array_push($this->children, $questionAnswer);
+    //             array_push($this->children, $row['id']);
+    //         }
+    //     }
+    //     catch (PDOException $ex){
+    //         return false;
+    //     }
+    // }
 
     /* Fetches the information from a specific question from the db */
     public function populate( $fetch ){
-        $this->id = $fetch;
         try{
             require 'hidden/db.php';
             //Lookup all info about question
-            $query = "SELECT * FROM Post WHERE id='" . $this->id . "'";
+            $query = "SELECT * FROM Post WHERE id='" . $fetch . "'";
 
             $statement = $db->prepare( $query );
             $statement->execute(  );
@@ -70,6 +67,18 @@ class Question
             $this->solved = $result['Solved'];
             $this->date = $result['Date'];
             $this->parent = $result['Parent'];
+            $this->id = $fetch;
+
+            $query = "SELECT * FROM Post WHERE Parent='" . $id . "'";   //TODO: select only id
+
+            $statement = $db->prepare( $query );
+            $statement->execute(  );
+
+            $result    = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row){
+                array_push($this->children, $row['id']);
+            }
         }
         catch (PDOException $ex){
             return false;
@@ -92,7 +101,7 @@ class Question
                 $db->beginTransaction();
                 $stmt->bindValue(1, $this->title);
                 $stmt->bindValue(2, $this->category);
-                $stmt->bindValue(3, 0);
+                $stmt->bindValue(3, $parent);
                 $stmt->bindValue(4, $this->userId);
                 $stmt->bindValue(5, $this->body);
                 $stmt->bindValue(6, $this->score);
