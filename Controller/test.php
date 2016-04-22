@@ -10,12 +10,18 @@ require_once '../Model/post.php';
 require_once '../Model/user.php';
 require_once '../Model/login.php';
 
+echo "<html>";
+
 if(logIn("test2", "test")){
     echo "Successfully logged in as " . $_SESSION['user'] . "<br> Your privilege level is " . $_SESSION['role'] . "<br><br>";
 }
 else{
     echo "Log in failed<br><br>";
 }
+
+$currentUser = new User($_SESSION['id']); 
+echo "id: " . $currentUser->id . "<br>";
+echo "user name: " . $currentUser->id . "<br>";
 
 $mainQuestion = new Post();
 $mainQuestion->score = 2;
@@ -31,7 +37,7 @@ if($mainQuestion->solved){
     $solved = "true";
 }
 
-echo "<html>";
+
 echo "id: " . $mainQuestion->getId() . "<br>";
 echo "score: " . $mainQuestion->score . "<br>";
 echo "title: " . $mainQuestion->title . "<br>";
