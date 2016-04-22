@@ -7,34 +7,42 @@ Example Hub
 */
 class User
 {
-    public $id, $handle, $score, $questions, $answers;
+    public $id, $handle, $score, $privileges, $questions, $answers;
 
     public function __construct(  ){
         $this->id = -1;
-        $this->score = 1;
+        $this->score = -1;
         $this->handle = "";
-        $this->questions = []];
+        $this->questions = [];
         $this->answers = [];
         
     }
 
     /* Fetches the information from a specific user from the db */
-    public function populate ( $id ){
-        $this->id = $id;
+    public function populate ( $fetch ){
+        $this->id = $fetch;
+        try{
+            require 'hidden/db.php';
+            //Lookup all info about question
+            $query = "SELECT * FROM User WHERE id='" . $this->id . "'";
+
+            $statement = $db->prepare( $query );
+            $statement->execute(  );
+
+            $result    = $statement->fetch(PDO::FETCH_ASSOC);
+
+            $this->id = $result['ID'];
+            $this->handle = $result['UserName'];
+            $this->privileges = $result['Privelages'];
+
+        }
+        catch (PDOException $ex){
+            return false;
+        }
 
         
     }
 
-    /* Submits a created user to the database */
-    public function submit ( $questionid ){
-        if($this->id == -1){
-            //create new entry
-        }
-        else{
-            //modify/replace old entry
-        }
-
-    }
 }
 
 ?>
