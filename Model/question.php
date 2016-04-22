@@ -74,7 +74,7 @@ class Question
             return false;
         }
 
-        getChildren();
+        $this->getChildren();
 
     }
 
