@@ -10,8 +10,8 @@ class LoginHelpers(){
     function registerUser( $username, $password){
     	//redirectToHTTPS();
 
-        try{
-        	require 'hidden/db.php';
+        // try{
+        // 	require 'hidden/db.php';
             // $stmt = $db->prepare("insert into User (UserName, Password, Privelages) values(?,?,?)");
             // $db->beginTransaction();
             // $stmt->bindValue(1, $username);
@@ -22,11 +22,11 @@ class LoginHelpers(){
             // $db->commit();
             // return true;
 
-        }
+        // }
 
-        catch (PDOException $ex){
-            return false;
-        }
+        // catch (PDOException $ex){
+        //     return false;
+        // }
     }
 
     /*This function from GSCDB example */ 
