@@ -12,6 +12,9 @@ require_once '../Model/login.php';
 if(logIn("test2", "test")){
     echo "Successfully logged in as " . $_SESSION['user'] . "<br><br>";
 }
+else{
+    echo "Log in failed<br><br>";
+}
 
 $mainQuestion = new Post();
 $mainQuestion->score = 2;
