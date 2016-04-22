@@ -77,7 +77,6 @@ class Post
             $result    = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($result as $row){
-                echo $row['ID'];
                 array_push($this->children, $row['ID']);
             }
         }

@@ -7,7 +7,9 @@ Example Hub
 */
 
 require_once '../Model/post.php';
-require_once '../Model/login.php';
+require_once('../Model/login.php');
+
+$login = new login();
 
 $mainQuestion = new Post();
 $mainQuestion->score = 2;
@@ -52,10 +54,9 @@ foreach($pulledQuestion->children as $child){
     echo "child: " . $child . "<br>";
 }
 
-if(registerUser("test2", "test")){
+if($login->registerUser("test2", "test")){
     echo "Registration Successful";
 }
-
 else{
     echo "Registration failed";
 }
