@@ -6,14 +6,14 @@ cs4540 - Web Systems
 Example Hub
 */
 
-function registerUser( $username, $password){
+function registerUser( $user, $password){
 	//redirectToHTTPS();
 
     try{
     	require 'hidden/db.php';
         $stmt = $db->prepare("insert into User (UserName, Password, Privelages) values(?,?,?)");
         $db->beginTransaction();
-        $stmt->bindValue(1, $username);
+        $stmt->bindValue(1, $user);
         $hashedPassword = computeHash($password, makeSalt());
         $stmt->bindValue(2, $hashedPassword);
         $stmt->bindValue(3, 0);
