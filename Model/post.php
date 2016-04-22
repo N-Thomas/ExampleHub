@@ -69,7 +69,7 @@ class Post
             $this->parent = $result['Parent'];
             $this->id = $fetch;
 
-            $query = "SELECT * FROM Post WHERE Parent='" . $id . "'";   //TODO: select only id
+            $query = "SELECT * FROM Post WHERE Parent='" . $this->id . "'";   //TODO: select only id
 
             $statement = $db->prepare( $query );
             $statement->execute(  );
