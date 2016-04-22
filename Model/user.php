@@ -21,7 +21,7 @@ class User
     }
 
     /* Fetches the information from a specific user from the db */
-    public function populate ( $fetch ){
+    private function populate ( $fetch ){
         $this->id = $fetch;
         try{
             require 'hidden/db.php';
