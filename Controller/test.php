@@ -52,12 +52,12 @@ foreach($pulledQuestion->children as $child){
     echo "child: " . $child . "<br>";
 }
 
-// if(registerUser("test2", "test")){
-//     echo "Registration Successful";
-// }
-// else{
-//     echo "Registration failed";
-// }
+if(registerUser("test2", "test")){
+    echo "Registration Successful";
+}
+else{
+    echo "Registration failed";
+}
 
 echo "</html>";
 
