@@ -7,7 +7,7 @@ Example Hub
 */
 
 function registerUser( $user, $password){
-	//redirectToHTTPS();
+	redirectToHTTPS();
 
     try{
     	require 'hidden/db.php';
