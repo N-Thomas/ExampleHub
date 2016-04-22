@@ -13,15 +13,21 @@ require_once '../Model/login.php';
 echo "<html>";
 
 if(logIn("test2", "test")){
-    echo "Successfully logged in as " . $_SESSION['user'] . "<br> Your privilege level is " . $_SESSION['role'] . "<br><br>";
+    echo "Successfully logged in as " . $_SESSION['user'] . "<br> Your privilege level is " . $_SESSION['role'] . "<br>";
 }
 else{
-    echo "Log in failed<br><br>";
+    echo "Log in failed<br>";
 }
 
-$currentUser = new User($_SESSION['id']); 
+$cId = 2;
+
+if(isset($_SESSION['id'])){
+    $cId = $_SESSION['id'];
+}
+
+$currentUser = new User($cId); 
 echo "id: " . $currentUser->id . "<br>";
-echo "user name: " . $currentUser->id . "<br>";
+echo "user name: " . $currentUser->userName . "<br><br><br>";
 
 $mainQuestion = new Post();
 $mainQuestion->score = 2;
