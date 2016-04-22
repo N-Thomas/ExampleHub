@@ -6,9 +6,21 @@ cs4540 - Web Systems
 Example Hub
 */
 
+
+/*Post Object for Questions, Answers and Comments
+*   $id : int = unique id of post
+*   $score : int = score of post
+*   title : string = title of post
+*   categegory : string = category of post
+*   body : string = body of  post
+*   children : [int] = unique id of all child posts of this one
+*   solved : int = boolean int declaring if the question is solved, or if it is an answer, it solved the question
+*   parent : int = parent post. 0 if post is a question, parent is question if it is an answer, else it is a comment
+*/
 class Post
 {
-    public $id, $userId, $category, $score, $title, $body, $solved, $children, $parent;
+    public $userId, $category, $score, $title, $body, $solved, $children, $parent;
+    private $id;
 
     public function __construct(  ){
         $this->id = -1;
