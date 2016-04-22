@@ -23,6 +23,33 @@ class Question
         
     }
 
+    /* Lookup answers children with post */
+    function getChildren(){
+        if($this->id == -1){
+            return false;
+        }
+        try{
+            require 'hidden/db.php';
+
+            $query = "SELECT * FROM Post WHERE Parent='" . $id . "'";
+
+            $statement = $db->prepare( $query );
+            $statement->execute(  );
+
+            $result    = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($result as $row){
+                // $questionAnswer = new Answer();
+                // $questionAnswer.populate( $row['id'] );
+                // array_push($this->children, $questionAnswer);
+                array_push($this->children, $row['id']);
+            }
+        }
+        catch (PDOException $ex){
+            return false;
+        }
+    }
+
     /* Fetches the information from a specific question from the db */
     public function populate( $fetch ){
         $this->id = $fetch;
@@ -49,33 +76,6 @@ class Question
 
         getChildren();
 
-    }
-
-    /* Lookup answers associated with question */
-    function getChildren(){
-        if($this->id == -1){
-            return false;
-        }
-        try{
-            require 'hidden/db.php';
-
-            $query = "SELECT * FROM Post WHERE Parent='" . $id . "'";
-
-            $statement = $db->prepare( $query );
-            $statement->execute(  );
-
-            $result    = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach ($result as $row){
-                // $questionAnswer = new Answer();
-                // $questionAnswer.populate( $row['id'] );
-                // array_push($this->children, $questionAnswer);
-                array_push($this->children, $row['id']);
-            }
-        }
-        catch (PDOException $ex){
-            return false;
-        }
     }
 
     /* Submits a created question to the database */
