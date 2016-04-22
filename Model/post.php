@@ -30,7 +30,7 @@ class Post
         $this->body = "";
         $this->children = [];
         $this->solved = 0;
-        $this->parent = 0;
+        $this->parent = -1;
     }
 
     /* Lookup answers children with post */
@@ -100,7 +100,7 @@ class Post
 
     /* Submits a created question to the database */
     public function submit ( ){
-        if($this->title == "" || $this->body == ""){
+        if($this->title == "" || $this->body == "" || $this->parent == -1){
             return false;
         }
         if($this->id == -1){
@@ -133,6 +133,10 @@ class Post
         }
         return false;
 
+    }
+
+    public function getId(){
+        return $this->id;
     }
 }
 

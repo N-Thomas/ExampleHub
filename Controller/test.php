@@ -31,7 +31,7 @@ if($mainQuestion->solved){
 }
 
 echo "<html>";
-echo "id: " . $mainQuestion->id . "<br>";
+echo "id: " . $mainQuestion->getId() . "<br>";
 echo "score: " . $mainQuestion->score . "<br>";
 echo "title: " . $mainQuestion->title . "<br>";
 echo "body: " . $mainQuestion->body . "<br>";
@@ -50,7 +50,7 @@ $pulledQuestion = new Post();
 $pulledQuestion->populate(3);
 
 echo "<br><br><br>";
-echo "id: " . $pulledQuestion->id . "<br>";
+echo "id: " . $pulledQuestion->getId() . "<br>";
 echo "score: " . $pulledQuestion->score . "<br>";
 echo "title: " . $pulledQuestion->title . "<br>";
 echo "body: " . $pulledQuestion->body . "<br>";
