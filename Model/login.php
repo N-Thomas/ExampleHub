@@ -7,6 +7,7 @@ Example Hub
 */
 
 function logIn( $user, $password){
+    redirectToHTTPS();
     try {
         require 'hidden/db.php';
         $stmt = $db->prepare("SELECT * from User WHERE UserName = ?");
@@ -20,6 +21,7 @@ function logIn( $user, $password){
             //Validate
             if (computeHash($password, $hashedPassword) == $hashedPassword){
                 session_start();
+                $_SESSION['id'] = $row['ID'];
                 $_SESSION['user'] = $row['UserName'];
                 $_SESSION['role'] = $row['Privelages'];
                 return true;

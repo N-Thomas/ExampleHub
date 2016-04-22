@@ -5,6 +5,7 @@ cs4540 - Web Systems
 4/17/2016
 Example Hub
 */
+
 class User
 {
     public $id, $userName, $score, $privileges, $questions, $answers;
@@ -40,6 +41,14 @@ class User
             return false;
         }
 
+        
+    }
+
+    public function getQA(){
+
+    }
+
+    public function getScore(){
         
     }
 

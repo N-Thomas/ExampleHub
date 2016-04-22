@@ -10,7 +10,7 @@ require_once '../Model/post.php';
 require_once '../Model/login.php';
 
 if(logIn("test2", "test")){
-    echo "Successfully logged in as " . $_SESSION['user'] . "<br><br>";
+    echo "Successfully logged in as " . $_SESSION['user'] . "<br> Your privilege level is " . $_SESSION['role'] . "<br><br>";
 }
 else{
     echo "Log in failed<br><br>";
@@ -20,7 +20,7 @@ $mainQuestion = new Post();
 $mainQuestion->score = 2;
 $mainQuestion->title = "How do I add?";
 $mainQuestion->body = "I have always wanted to know";
-$mainQuestion->solved = false;
+$mainQuestion->solved = 0;
 $mainQuestion->userId = 1;
 $mainQuestion->category = "Science";
 $mainQuestion->parent = 3;
