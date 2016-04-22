@@ -84,8 +84,6 @@ class Post
             return false;
         }
 
-        $this->getChildren();
-
     }
 
     /* Submits a created question to the database */
