@@ -25,7 +25,8 @@ function logIn( $user, $password){
                 return true;
             }
             else {
-                $message = 'Log in info not validated\n';
+                $message = 'Log in info not validated';
+                echo $message;
                 /* TODO: Throw an error and redirect $message */
                 return false;
             }
@@ -33,6 +34,7 @@ function logIn( $user, $password){
         }
         else {
             $message = 'User does not exist';
+            echo $message;
             /* TODO: Throw an error and redirect $message */
             return false;
         }
