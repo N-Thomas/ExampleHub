@@ -6,6 +6,43 @@ cs4540 - Web Systems
 Example Hub
 */
 
+function logIn( $user, $password){
+    try {
+        require 'hidden/db.php';
+        $stmt = $db->prepare("SELECT * from User WHERE uid = ?");
+        $stmt->bindValue(1, $username);
+        $stmt->execute();
+
+        //verify user exists
+        if ($row = $stmt->fetch()){
+            $hashedPassword = $row['Password'];
+
+            //Validate
+            if (computeHash($password, $hashedPassword) == $hashedPassword){
+                session_start();
+                $_SESSION['user'] = $row['UserName'];
+                $_SESSION['role'] = $row['Privelages'];
+                return true;
+            }
+            else {
+                $message = 'Log in info not validated\n';
+                /* TODO: Throw an error and redirect $message */
+                return false;
+            }
+
+        }
+        else {
+            $message = 'User does not exist';
+            /* TODO: Throw an error and redirect $message */
+            return false;
+        }
+    }
+    catch (PDOException $exception) {
+        /* TODO: redirect */
+        return false;
+    }
+}
+
 function registerUser( $user, $password){
 	redirectToHTTPS();
 
