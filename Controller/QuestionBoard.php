@@ -2,6 +2,6 @@
 
 
 require_once '../Model/hidden/db.php';
-echo hello;
 
+require_once '../View/QuestionBoard.php';
 ?>
