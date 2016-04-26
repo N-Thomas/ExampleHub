@@ -5,7 +5,7 @@ cs4540 - Web Systems
 4/17/2016
 Example Hub
 */
-$message;
+
 function logIn( $user, $password){
     redirectToHTTPS();
     try {
