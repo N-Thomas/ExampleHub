@@ -14,7 +14,7 @@ if(registerUser($user, $password)){
 	require_once 'QuestionBoard.php';
 }
 else{
-	require_once 'Signup.php';
+	echo "something went wrong";
 }
 
 
