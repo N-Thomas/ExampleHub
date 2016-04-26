@@ -5,15 +5,18 @@ require '../Model/user.php';
 require '../Model/post.php';
 
 
-$user = $_POST["username1"];
+$user = $_POST["username"];
 $password = $_POST["pwd1"];
 
 if(registerUser($user, $password)){
 	
-	echo "you were registered";
+	
+	login($user, $password);
+	header("Location: PersonalBoard.php");
 }
 else{
-	echo "something went wrong";
+	header("Location: register.php");
+	
 }
 
 

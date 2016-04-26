@@ -166,22 +166,19 @@
 <form onsubmit="return checkForm(this);" action="register.php" method="post" enctype="multipart/form-data">
     <p>Username:
         <br>
-        <input type="text" name="username1">
+        <input type="text" name="username" required="true">
     </p>
 
-    <p>Confirm Username:
-        <br>
-        <input type="text" name="username2">
-    </p>
+    
 
     <p>Password:
         <br>
-        <input type="password" name="pwd1">
+        <input type="password" name="pwd1" required = "true">
     </p>
 
     <p>Confirm Password:
         <br>
-        <input type="password" name="pwd2">
+        <input type="password" name="pwd2" required = "true">
     </p>
 
     <p>

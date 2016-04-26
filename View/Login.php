@@ -69,14 +69,15 @@
     }
 </script>
 
-<form action="makecookie.php" method = "post" id="credentials">
+<form action="session.php" method = "post" id="credentials">
+
     <p>
     Username:<br>
-    <input type="text" name="username">
+    <input type="text" name="username" required = "true">
     </p>
     <p>
     Password:<br>
-    <input type="password" name="hash">
+    <input type="password" name="hash" required = "true">
     </p>
     <p>
     <input type="submit">
