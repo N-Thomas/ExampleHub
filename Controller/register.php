@@ -10,8 +10,7 @@ $password = $_POST["pwd1"];
 
 if(registerUser($user, $password)){
 	
-	login($user, $password);
-	require_once 'QuestionBoard.php';
+	echo "you were registered";
 }
 else{
 	echo "something went wrong";

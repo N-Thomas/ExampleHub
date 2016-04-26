@@ -176,12 +176,12 @@
 
     <p>Password:
         <br>
-        <input type="text" name="pwd1">
+        <input type="password" name="pwd1">
     </p>
 
     <p>Confirm Password:
         <br>
-        <input type="text" name="pwd2">
+        <input type="password" name="pwd2">
     </p>
 
     <p>
