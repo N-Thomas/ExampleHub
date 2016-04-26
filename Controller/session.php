@@ -18,15 +18,6 @@ $username = stripslashes($username);
 $password = stripslashes($password);
 //echo $username."us";
 
-if(logIn($username, $password)){
-
-
-
-
-header("Location: PersonalBoard.php");
-}
-else{
-	header("Location: Login.php");
-}
+logIn($username, $password);
 ?>
 
