@@ -5,7 +5,7 @@
  * Date: 4/24/2016
  * Time: 10:13 PM
  */
-session_start();
+
 
 $username = strip_tags($_POST['username']);//prevent sql injection.
 $password = strip_tags($_POST['hash']);
