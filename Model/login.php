@@ -22,7 +22,7 @@ function logIn( $user, $password){
             if (computeHash($password, $hashedPassword) == $hashedPassword){
                 session_start();
                 $_SESSION['id'] = $row['ID'];
-                $_SESSION['user'] = $row['UserName'];
+                $_SESSION['username'] = $row['UserName'];
                 $_SESSION['role'] = $row['Privelages'];
                 return true;
             }
