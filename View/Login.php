@@ -14,11 +14,11 @@
     <title>Welcome!</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../View/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="button.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="../View/button.js"></script>
 </head>
 
 
@@ -69,14 +69,18 @@
     }
 </script>
 
+<<<<<<< HEAD
 <form action="../view/makecookie.php" id="credentials">
+=======
+<form action="../View/makecookie.php" method = "post" id="credentials">
+>>>>>>> origin/master
     <p>
     Username:<br>
     <input type="text" name="username">
     </p>
     <p>
     Password:<br>
-    <input type="text" name="hash">
+    <input type="password" name="hash">
     </p>
     <p>
     <input type="submit">

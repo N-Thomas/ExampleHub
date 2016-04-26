@@ -7,8 +7,8 @@
  */
 session_start();
 
-$username = strip_tags($_GET['username']);//prevent sql injection.
-$password = strip_tags($_GET['hash']);
+$username = strip_tags($_POST['username']);//prevent sql injection.
+$password = strip_tags($_POST['hash']);
 
 //echo $username."us";
 $username = stripslashes($username);
