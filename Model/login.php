@@ -20,7 +20,10 @@ function logIn( $user, $password){
         //verify user exists
         if ($row = $stmt->fetch()){
             $hashedPassword = $row['Password'];
-
+             $drum = 'twelve';
+             if(password_verify($drum, $hashedPassword)){
+             	return false;
+             }
             //Validate
             if (password_verify($password, $hashedPassword)){
                 session_start();
