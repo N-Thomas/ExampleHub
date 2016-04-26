@@ -19,7 +19,7 @@ function logIn( $user, $password){
             $hashedPassword = $row['Password'];
 
             //Validate
-            if (computeHash($password, $hashedPassword) == $hashedPassword){
+            if (computeHash($password, makeSalt()) == $hashedPassword){
                 session_start();
                 $_SESSION['id'] = $row['ID'];
                 $_SESSION['username'] = $row['UserName'];
