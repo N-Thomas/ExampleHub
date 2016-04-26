@@ -55,7 +55,8 @@ function registerUser( $user, $password){
         $stmt = $db->prepare("insert into User (UserName, Password, Privelages) values(?,?,?)");
         $db->beginTransaction();
         $stmt->bindValue(1, $user);
-        $hashedPassword = computeHash($password, makeSalt());
+        //$hashedPassword = computeHash($password, makeSalt());
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $stmt->bindValue(2, $hashedPassword);
         $stmt->bindValue(3, 0);
         $stmt->execute();
