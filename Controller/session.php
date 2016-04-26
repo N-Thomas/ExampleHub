@@ -22,7 +22,7 @@ if(logIn($username, $password)){
 
 echo "we got here";
 
-var_dump($_SESSION);
+
 //header("Location: PersonalBoard.php");
 }
 else{

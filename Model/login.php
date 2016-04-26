@@ -24,6 +24,7 @@ function logIn( $user, $password){
                 $_SESSION['id'] = $row['ID'];
                 $_SESSION['user'] = $row['UserName'];
                 $_SESSION['role'] = $row['Privelages'];
+                var_dump($_SESSION);
                 return true;
             }
             else {
