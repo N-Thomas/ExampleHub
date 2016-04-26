@@ -77,7 +77,7 @@
     </p>
     <p>
     Password:<br>
-    <input type="password" name="hash" required = "true">
+    <input type="password" name="password" required = "true">
     </p>
     <p>
     <input type="submit">

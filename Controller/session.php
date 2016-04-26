@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 $message = "";
 require_once '../Model/login.php';
 $username = strip_tags($_POST['username']);//prevent sql injection.
-$password = strip_tags($_POST['hash']);
+$password = strip_tags($_POST['password']);
 
 //echo $username."us";
 $username = stripslashes($username);
