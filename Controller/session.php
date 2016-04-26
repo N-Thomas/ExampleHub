@@ -17,16 +17,17 @@ $password = strip_tags($_POST['hash']);
 $username = stripslashes($username);
 $password = stripslashes($password);
 //echo $username."us";
-
-if(logIn($username, $password)){
-
-
-
+echo $username;
+echo $password;
+if(login($username, $password)){
 
 
+
+
+//header("Location: PersonalBoard.php");
 }
 else{
-	
+	//header("Location: Login.php");
 }
 ?>
 
