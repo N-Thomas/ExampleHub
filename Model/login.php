@@ -5,7 +5,7 @@ cs4540 - Web Systems
 4/17/2016
 Example Hub
 */
-
+$message;
 function logIn( $user, $password){
     redirectToHTTPS();
     try {
@@ -19,7 +19,7 @@ function logIn( $user, $password){
             $hashedPassword = $row['Password'];
 
             //Validate
-            if (computeHash($password, makeSalt()) == $hashedPassword){
+            if (computeHash($password, $hashedPassword) == $hashedPassword){
                 session_start();
                 $_SESSION['id'] = $row['ID'];
                 $_SESSION['username'] = $row['UserName'];
