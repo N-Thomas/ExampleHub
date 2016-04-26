@@ -23,7 +23,7 @@ if(logIn($username, $password)){
 
 
 
-header("Location: PersonalBoard.php");
+
 }
 else{
 	
