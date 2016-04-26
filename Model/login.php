@@ -8,7 +8,6 @@ Example Hub
 
 function logIn( $user, $password){
     redirectToHTTPS();
-    echo $password;
     try {
         require 'hidden/db.php';
         $stmt = $db->prepare("SELECT * from User WHERE UserName = ?");
@@ -18,15 +17,13 @@ function logIn( $user, $password){
         //verify user exists
         if ($row = $stmt->fetch()){
             $hashedPassword = $row['Password'];
-             $message = computeHash($password, $hashedPassword) . " and " . $hashedPassword;
-             echo $message;
+
             //Validate
             if (computeHash($password, $hashedPassword) == $hashedPassword){
                 session_start();
                 $_SESSION['id'] = $row['ID'];
-                $_SESSION['username'] = $row['UserName'];
+                $_SESSION['user'] = $row['UserName'];
                 $_SESSION['role'] = $row['Privelages'];
-                
                 return true;
             }
             else {
@@ -39,7 +36,7 @@ function logIn( $user, $password){
         }
         else {
             $message = 'User does not exist';
-            
+            echo $message;
             /* TODO: Throw an error and redirect $message */
             return false;
         }
