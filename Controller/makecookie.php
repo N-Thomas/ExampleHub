@@ -20,13 +20,8 @@ $password = md5($password);//hashword
 
 $_SESSION['username'] = $username;
 $_SESSION['password'] = $password;
+
+
+header("Location: QuestionBoard.php");
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-<meta http-equiv="refresh" content="0;url=QuestionBoard.php" />
-</body>
-</html>

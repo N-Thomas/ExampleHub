@@ -69,11 +69,7 @@
     }
 </script>
 
-<<<<<<< HEAD
-<form action="../view/makecookie.php" id="credentials">
-=======
-<form action="../View/makecookie.php" method = "post" id="credentials">
->>>>>>> origin/master
+<form action="makecookie.php" method = "post" id="credentials">
     <p>
     Username:<br>
     <input type="text" name="username">
