@@ -18,6 +18,7 @@ function logIn( $user, $password){
         if ($row = $stmt->fetch()){
             $hashedPassword = $row['Password'];
              $message = computeHash($password, $hashedPassword) . " and " . $hashedPassword;
+             echo $message;
             //Validate
             if (computeHash($password, $hashedPassword) == $hashedPassword){
                 session_start();

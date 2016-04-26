@@ -24,10 +24,10 @@ if(logIn($username, $password)){
 
 
 
-header("Location: PersonalBoard.php?message=" . $message);
+//header("Location: PersonalBoard.php");
 }
 else{
-	header("Location: Login.php?error=" . $message);
+	//header("Location: PersonalBoard.php");
 }
 ?>
 
