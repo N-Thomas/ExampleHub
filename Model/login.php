@@ -17,14 +17,14 @@ function logIn( $user, $password){
         //verify user exists
         if ($row = $stmt->fetch()){
             $hashedPassword = $row['Password'];
-
+             $message = computeHash($password, $hashedPassword) . " and " . $hashedPassword;
             //Validate
             if (computeHash($password, $hashedPassword) == $hashedPassword){
                 session_start();
                 $_SESSION['id'] = $row['ID'];
                 $_SESSION['username'] = $row['UserName'];
                 $_SESSION['role'] = $row['Privelages'];
-                var_dump($_SESSION);
+                
                 return true;
             }
             else {

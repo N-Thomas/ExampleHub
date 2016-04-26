@@ -24,7 +24,7 @@ if(logIn($username, $password)){
 
 
 
-header("Location: PersonalBoard.php");
+header("Location: PersonalBoard.php?message=" . $message);
 }
 else{
 	header("Location: Login.php?error=" . $message);
