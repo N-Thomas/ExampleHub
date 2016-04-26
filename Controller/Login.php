@@ -2,8 +2,8 @@
 
 
 require_once '../Model/login.php';
-require '../Model/user.php';
 require '../Model/post.php';
+require '../Model/user.php';
 
-require_once '../View/QuestionBoard.php';
+require_once '../View/Login.php';
 ?>
