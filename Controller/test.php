@@ -12,7 +12,7 @@ require_once '../Model/login.php';
 
 echo "<html>";
 
-if(logIn("test2", "test")){
+if(logIn("test2", "tes")){
     echo "Successfully logged in as " . $_SESSION['user'] . "<br> Your privilege level is " . $_SESSION['role'] . "<br>";
 }
 else{
