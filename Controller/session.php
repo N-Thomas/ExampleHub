@@ -6,6 +6,9 @@
  * Time: 10:13 PM
  */
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $username = strip_tags($_POST['username']);//prevent sql injection.
 $password = strip_tags($_POST['hash']);
@@ -15,11 +18,15 @@ $username = stripslashes($username);
 $password = stripslashes($password);
 //echo $username."us";
 
-login($username, $password);
+if(login($username, $password)){
 
 
 
 
 header("Location: PersonalBoard.php");
+}
+else{
+	header("Location: Login.php");
+}
 ?>
 
