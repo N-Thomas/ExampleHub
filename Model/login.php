@@ -9,10 +9,11 @@ Example Hub
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-function logIn( $user, $password){
+require 'hidden/db.php';
+function logIn($user, $password){
     redirectToHTTPS();
     try {
-        require 'hidden/db.php';
+        
         $stmt = $db->prepare("SELECT * from User WHERE UserName = ?");
         $stmt->bindValue(1, $user);
         $stmt->execute();
