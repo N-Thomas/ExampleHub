@@ -5,7 +5,7 @@ cs4540 - Web Systems
 4/17/2016
 Example Hub
 */
-
+$message;
 function logIn( $user, $password){
     redirectToHTTPS();
     try {
@@ -22,7 +22,7 @@ function logIn( $user, $password){
             if (computeHash($password, $hashedPassword) == $hashedPassword){
                 session_start();
                 $_SESSION['id'] = $row['ID'];
-                $_SESSION['user'] = $row['UserName'];
+                $_SESSION['username'] = $row['UserName'];
                 $_SESSION['role'] = $row['Privelages'];
                 var_dump($_SESSION);
                 return true;
@@ -37,7 +37,7 @@ function logIn( $user, $password){
         }
         else {
             $message = 'User does not exist';
-            echo $message;
+            
             /* TODO: Throw an error and redirect $message */
             return false;
         }

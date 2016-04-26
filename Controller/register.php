@@ -15,7 +15,7 @@ if(registerUser($user, $password)){
 	header("Location: PersonalBoard.php");
 	}
 	else{
-	 echo "something went wrong with logging in";
+	 header("Location: Signup.php?error=" . $message);
 	}
 }
 else{

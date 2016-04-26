@@ -20,13 +20,13 @@ $password = stripslashes($password);
 
 if(logIn($username, $password)){
 
-echo "we got here";
 
 
-//header("Location: PersonalBoard.php");
+
+header("Location: PersonalBoard.php");
 }
 else{
-	//header("Location: Login.php");
+	header("Location: Login.php?error=" . $message);
 }
 ?>
 
