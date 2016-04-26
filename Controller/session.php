@@ -27,7 +27,7 @@ if(logIn($username, $password)){
 header("Location: PersonalBoard.php");
 }
 else{
-	header("Location: PersonalBoard.php");
+	header("Location: Login.php");
 }
 ?>
 
