@@ -9,11 +9,11 @@ Example Hub
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require 'hidden/db.php';
-function logIn($user, $password){
+
+function logIn($user, $psswrd){
     redirectToHTTPS();
     try {
-        
+    	require 'hidden/db.php';
         $stmt = $db->prepare("SELECT * from User WHERE UserName = ?");
         $stmt->bindValue(1, $user);
         $stmt->execute();
@@ -21,9 +21,9 @@ function logIn($user, $password){
         //verify user exists
         if ($row = $stmt->fetch()){
             $hashedPassword = $row['Password'];
-            var_dump($password);
+            
             //Validate
-            if (password_verify($password, $hashedPassword)){
+            if (password_verify($psswrd, $hashedPassword)){
                 session_start();
                 $_SESSION['id'] = $row['ID'];
                 $_SESSION['username'] = $row['UserName'];
@@ -51,7 +51,7 @@ function logIn($user, $password){
     }
 }
 
-function registerUser( $user, $password){
+function registerUser( $user, $psswrd){
 	redirectToHTTPS();
 
     try{
@@ -60,7 +60,7 @@ function registerUser( $user, $password){
         $db->beginTransaction();
         $stmt->bindValue(1, $user);
         //$hashedPassword = computeHash($password, makeSalt());
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($psswrd, PASSWORD_DEFAULT);
         $stmt->bindValue(2, $hashedPassword);
         $stmt->bindValue(3, 0);
         $stmt->execute();
@@ -96,8 +96,8 @@ function makeSalt(){
 }
 
 /*This function from GSCDB example */ 
-function computeHash ($password, $salt) {
-    return crypt($password, $salt);
+function computeHash ($psswrd, $salt) {
+    return crypt($psswrd, $salt);
 }
 
 ?>
