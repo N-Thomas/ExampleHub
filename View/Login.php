@@ -69,7 +69,7 @@
     }
 </script>
 
-<form action="makecookie.php" id="credentials">
+<form action="../view/makecookie.php" id="credentials">
     <p>
     Username:<br>
     <input type="text" name="username">
