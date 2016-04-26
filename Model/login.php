@@ -8,6 +8,7 @@ Example Hub
 
 function logIn( $user, $password){
     redirectToHTTPS();
+    echo $password;
     try {
         require 'hidden/db.php';
         $stmt = $db->prepare("SELECT * from User WHERE UserName = ?");
