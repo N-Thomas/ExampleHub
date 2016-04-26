@@ -18,7 +18,7 @@ $username = stripslashes($username);
 $password = stripslashes($password);
 //echo $username."us";
 
-if(login($username, $password)){
+if(logIn($username, $password)){
 
 
 

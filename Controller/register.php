@@ -11,7 +11,7 @@ $password = $_POST["pwd1"];
 if(registerUser($user, $password)){
 	
 	
-	if(login($user, $password)){
+	if(logIn($user, $password)){
 	header("Location: PersonalBoard.php");
 	}
 	else{
