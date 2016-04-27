@@ -9,7 +9,7 @@ if(!isset($_SESSION['id'])){//verify that they are signed in.
 }
 else{
     $user = new User($_SESSION['id']);
-	$user->populate($_SESSION['id']);
+	
 }
 
 ?>
