@@ -66,10 +66,10 @@ class Post
         try{
             require 'hidden/db.php';
             //Lookup all info about question
-            $query = "SELECT * FROM Post WHERE id='" . $fetch . "'";
+            $query = "SELECT * FROM Post WHERE id=?";
 
             $statement = $db->prepare( $query );
-            $statement->execute(  );
+            $statement->execute($fetch);
 
             $result    = $statement->fetch(PDO::FETCH_ASSOC);
 
