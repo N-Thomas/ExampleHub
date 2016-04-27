@@ -12,7 +12,8 @@ if(isset($_GET['id'])){
 $pid = $_GET['id'];
 $post = new Post();
 $result = $post->populate($pid);
-
+var_dump($result);
+var_dump($post);
 if($result){
 require_once '../View/QA.php';
 }
