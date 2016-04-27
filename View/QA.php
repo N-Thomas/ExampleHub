@@ -1,11 +1,6 @@
 <?php
 //Voting button code retrieved from: http://codepen.io/bennettfeely/pen/CGFEs
-   session_start();
-
-   if(!isset($_SESSION['username'])){//verify that they are signed in.
-       header("Location: Login.php");
-   }
-
+  
 ?>
 <!--This is a basic outline of what our forum can look like...-->
 
@@ -42,7 +37,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#"><?php echo $_SESSION['username']; ?></a>
+            <a class="navbar-brand" href="#"><?php echo $user->userName; ?></a>
         </div>
         <ul class="nav navbar-nav">
             <!--            <li><a href="#">Home</a></li>-->
@@ -89,7 +84,7 @@
 Enter your answer...
 </textarea>
 
-<form action="process.php" id="usrform">
+<form action="process.php" method = "post" id="usrform">
     <input type="submit">
 </form>
 

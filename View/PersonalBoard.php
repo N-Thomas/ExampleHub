@@ -5,11 +5,7 @@
  * Date: 4/24/2016
  * Time: 9:34 PM
  */
-session_start();
 
-if(!isset($_SESSION['username'])){//verify that they are signed in.
-    header("Location: Login.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

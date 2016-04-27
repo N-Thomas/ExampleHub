@@ -6,11 +6,7 @@
  * Time: 8:49 PM
  */
 
-session_start();
 
-if(!isset($_SESSION['username'])){//verify that they are signed in.
-    header("Location: Login.php");
-}
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +42,10 @@ if(!isset($_SESSION['username'])){//verify that they are signed in.
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#"><?php echo $_SESSION['username']; ?></a>
+            <a class="navbar-brand" href="#"><?php if($user){
+            	echo $user->userName;	
+            }
+             ?></a>
         </div>
         <ul class="nav navbar-nav">
             <!--            <li><a href="#">Home</a></li>-->
