@@ -11,7 +11,6 @@ require_once '../Model/user.php';
 require_once '../Model/login.php';
 
 echo "<html>";
-
 if(logIn("test2", "tes")){
     echo "Successfully logged in as " . $_SESSION['username'] . "<br> Your privilege level is " . $_SESSION['role'] . "<br>";
 }
