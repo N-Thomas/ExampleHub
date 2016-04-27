@@ -8,7 +8,7 @@ require '../Model/user.php';
 require '../Model/post.php';
 
 require_once 'verify.php';
-if(isset($GET['id'])){
+if(isset($_GET['id'])){
 $pid = $_GET['id'];
 echo $pid;
 $post = new Post();
@@ -18,11 +18,13 @@ if($result){
 require_once '../View/QA.php';
 }
 else{
-	echo "could not fetch Question";
+	header("HTTP/1.0 404 Not Found");
+	echo "HTTP/1.0 404 Not Found";
 }
 }
 else{
-	echo "Post id not set";
+	header("HTTP/1.0 404 Not Found");
+	echo "HTTP/1.0 404 Not Found";
 }
 
 ?>
