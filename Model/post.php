@@ -22,7 +22,7 @@ class Post
     public $userId, $category, $score, $title, $body, $solved, $children, $parent;
     private $id;
 
-    public function __construct( $uid ){
+    public function __construct( ){
         $this->id = -1;
         $this->score = 1;
         $this->title = "";
@@ -69,7 +69,7 @@ class Post
             $query = "SELECT * FROM Post WHERE id=?";
 
             $statement = $db->prepare( $query );
-            $statement->execute($fetch);
+            $statement->execute(array($fetch);
 
             $result    = $statement->fetch(PDO::FETCH_ASSOC);
 
