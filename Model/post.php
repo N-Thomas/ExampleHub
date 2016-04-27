@@ -69,7 +69,7 @@ class Post
             $query = "SELECT * FROM Post WHERE id=?";
 
             $statement = $db->prepare( $query );
-            $statement->execute(array($fetch);
+            $statement->execute(array($fetch));
 
             $result    = $statement->fetch(PDO::FETCH_ASSOC);
 
