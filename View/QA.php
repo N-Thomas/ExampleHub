@@ -52,8 +52,9 @@
 </nav>
 
 <div class="container">
-    <h2>Question</h2>
+    <h2>Question: <?php echo $post->title?></h2>
     <div class="well">What is 1 + 1?</div>
+       <?php echo $post->body;?>
 </div>
 <ul>
     <?php for ($x = 0; $x <= 2; $x++): ?>
@@ -84,7 +85,7 @@
 Enter your answer...
 </textarea>
 
-<form action="process.php" method = "post" id="usrform">
+<form action="processAnswer.php" method = "post" id="usrform">
     <input type="submit">
 </form>
 

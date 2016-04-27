@@ -77,21 +77,22 @@
 
 
 <h2 align="center">Post Your Question</h2>
-
-<textarea rows="8" cols="125" name="answer" form="usrform">
+<label for= "title">Title</label>
+<input type=text required = true; name="title" form="usrform">
+<textarea rows="8" cols="125" name="Question" form="usrform" required = "true">
     Enter your question...
 </textarea>
 
 <fieldset data-role="controlgroup" data-type="horizontal" align="center">
     <legend>Math or science?:</legend>
-    <label for="math">Math</label>
+    <label for="Math">Math</label>
     <input type="radio" name="mathorsci" id="math" value="math" form="usrform" checked>
-    <label for="science">Science</label>
+    <label for="Science">Science</label>
     <input type="radio" name="mathorsci" id="science" value="science" form="usrform">
 </fieldset>
 
 
-<form action="process.php" id="usrform">
+<form action="processQuestion.php" method = "post" id="usrform">
     <input type="submit">
 </form>
 

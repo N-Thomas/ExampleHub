@@ -22,7 +22,7 @@ class Post
     public $userId, $category, $score, $title, $body, $solved, $children, $parent;
     private $id;
 
-    public function __construct(  ){
+    public function __construct( $uid ){
         $this->id = -1;
         $this->score = 1;
         $this->title = "";
@@ -31,6 +31,7 @@ class Post
         $this->children = [];
         $this->solved = 0;
         $this->parent = -1;
+        
     }
 
     /* Lookup answers children with post */
