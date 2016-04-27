@@ -92,6 +92,7 @@ class Post
             foreach ($result as $row){
                 array_push($this->children, $row['ID']);
             }
+            return true;
         }
         catch (PDOException $ex){
             return false;

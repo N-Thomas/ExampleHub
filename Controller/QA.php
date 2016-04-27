@@ -12,14 +12,13 @@ if(isset($_GET['id'])){
 $pid = $_GET['id'];
 $post = new Post();
 $result = $post->populate($pid);
-var_dump($result);
-var_dump($post);
+
 if($result){
 require_once '../View/QA.php';
 }
 else{
-	//header("HTTP/1.0 404 Not Found");
-	//echo "HTTP/1.0 404 Not Found";
+	header("HTTP/1.0 404 Not Found");
+	echo "HTTP/1.0 404 Not Found";
 }
 }
 else{
