@@ -18,11 +18,11 @@ if($result){
 require_once '../View/QA.php';
 }
 else{
-	header("HTTP/1.0 404 Not Found");
+	echo "could not fetch Question";
 }
 }
 else{
-	header("HTTP/1.0 404 Not Found");
+	echo "Post id not set";
 }
 
 ?>
