@@ -53,11 +53,11 @@
 
 <div class="container">
     <h2>Question: <?php echo $post->title?></h2>
-    <div class="well">What is 1 + 1?</div>
-       <?php echo $post->body;?>
+    <div class="well"><?php echo $post->body;?></div>
+       
 </div>
 <ul>
-    <?php for ($x = 0; $x <= 2; $x++): ?>
+    <?php for ($x = 0; $x <= count($post->children); $x++): ?>
     <li>
         <div class="container">
             <h2>Answer</h2>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="well well-lg" style="float:left;">
-                blah blah blah...
+                <?php var_dump($post->children[$x]);?>
             </div>
 
 
