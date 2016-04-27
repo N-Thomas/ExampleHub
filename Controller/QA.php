@@ -8,6 +8,7 @@ require '../Model/post.php';
 require_once 'verify.php';
 if(isset($GET['id'])){
 $pid = $_GET['id'];
+echo $pid;
 $post = new Post();
 $result = $post->populate($pid);
 
