@@ -57,7 +57,9 @@
        
 </div>
 <ul>
-    <?php for ($x = 0; $x <= count($post->children); $x++): ?>
+    
+	
+    <?php for ($x = 0; $x < count($post->children); $x++): ?>
     <li>
         <div class="container">
             <h2>Answer</h2>
@@ -77,6 +79,7 @@
         </div>
     </li>
     <?php endfor; ?>
+ 
 </ul>
 
 <h2 align="center">Your Answer</h2>
