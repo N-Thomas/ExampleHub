@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>var flag = false;</script>
     <script src="button.js"></script>
 
     <style>
@@ -65,16 +66,10 @@
             <h2>Answer</h2>
 
             <div class="vote circle" style="float:left;">
-                <div  onclick= "function(this){
-                	this.parent().children()[0].disabled = true;
-            		this.parent().children()[1].disabled = true;
-                }" id = <?php "'up" . $x . "'" ?> class="increment up"></div>
-                <div onclick= "function(this){
-                	this.parent().children()[0].disabled = true;
-            		this.parent().children()[1].disabled = true;
-                }" id = <?php "'down" . $x . "'"?> class="increment down"></div>
+                <div    id = <?php "'up" . $x . "'" ?> class="increment up"></div>
+                <div  id = <?php "'down" . $x . "'"?> class="increment down"></div>
 
-                <div class="count">0</div>
+                <div onclick = "flag = true;" class="count">0</div>
             </div>
 			
             <div class="well well-lg" style="float:left;">

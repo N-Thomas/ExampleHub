@@ -1,15 +1,18 @@
 $(function(){
+	if(!flag){
     $(".increment").click(function(){
     	
         var count = parseInt($("~ .count", this).text());
         if($(this).hasClass("up")) {
 
             var count = count + 1;
+            flag = true;
             
                 console.log(count);
             $("~ .count", this).text(count);
         } else {
             var count = count - 1;
+            flag = true;
             
             $("~ .count", this).text(count);
         }
@@ -20,4 +23,5 @@ $(function(){
             $(this).parent().removeClass("bump");
         }, 400);
     });
+	}
 });
