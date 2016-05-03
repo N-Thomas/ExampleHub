@@ -153,7 +153,7 @@ class Post
 			
 			//increment/decrement post score
 			if($vote > 0) {
-				$stmt = $db->prepare("UPDATE Post SET Score= Score+1 WHERE ID=$idPost")
+				$stmt = $db->prepare("UPDATE Post SET Score= Score+1 WHERE ID=$idPost");
 				$db->beginTransaction();
 				$db->commit();
 			}
