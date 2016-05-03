@@ -19,10 +19,10 @@ $frontPage = frontpage();
 
 foreach($frontPage as $post){
 	echo $post . "<br>";
-	// echo "score: " . $frontPage->score . "<br>";
-	// echo "title: " . $frontPage->title . "<br>";
-	// echo "body: " . $frontPage->body . "<br>";
-	// echo "date: " . $frontPage-> . "<br><br><br>";
+	echo "score: " . $post->score . "<br>";
+	echo "title: " . $post->title . "<br>";
+	echo "body: " . $post->body . "<br>";
+	echo "date: " . $post->date . "<br><br><br>";
 }
 
 // if(logIn("test2", "tes")){
