@@ -72,7 +72,10 @@
             </div>
 
             <div class="well well-lg" style="float:left;">
-                <?php var_dump($post->children[$x]);?>
+                <?php
+                $p = new Post();
+                $p->populate($post->children[$x]);
+                 var_dump($p);?>
             </div>
 
 
@@ -89,7 +92,7 @@ Enter your answer...
 </textarea>
 
 <form action="ProcessAnswer.php" method = "post" id="usrform">
-	<input type="hidden"  name = "category" value = <?php echo $post->category; ?> >
+	<input type="hidden"  name = "category" value = <?php echo "'" . $post->category . "'"; ?> >
 	<input type="hidden"  name = "parent" value = <?php echo $_GET['id']?> >
     <input type="submit">
 </form>
