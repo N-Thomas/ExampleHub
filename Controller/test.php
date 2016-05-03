@@ -18,9 +18,10 @@ echo "<html>";
 $frontPage = frontpage();
 
 foreach($frontPage as $post){
-	echo "score: " . $frontPage->score . "<br>";
-	echo "title: " . $frontPage->title . "<br>";
-	echo "body: " . $frontPage->body . "<br>";
+	echo $post . "<br>";
+	// echo "score: " . $frontPage->score . "<br>";
+	// echo "title: " . $frontPage->title . "<br>";
+	// echo "body: " . $frontPage->body . "<br>";
 	// echo "date: " . $frontPage-> . "<br><br><br>";
 }
 

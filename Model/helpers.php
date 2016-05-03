@@ -1,6 +1,6 @@
 <?php
 
-require_once 'post.php';
+
 
 function frontpage(){
 	$results = [];
@@ -15,9 +15,7 @@ function frontpage(){
     $result    = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row){
-    	$toAdd = new Post();
-    	$toAdd->populate($row['ID']);
-        array_push($results, $toAdd);
+        array_push($results, $row['ID']);
     }
 
     return $results;
