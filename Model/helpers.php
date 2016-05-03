@@ -27,7 +27,7 @@ function userquestions( $number, $id ){
     $results = [];
 
     require 'hidden/db.php';
-    $query = "SELECT ID FROM Post WHERE Parent=0, UserID=" . $id .  " ORDER BY Date DESC LIMIT " . $number;
+    $query = "SELECT ID FROM Post WHERE Parent=0 AND UserID=" . $id .  " ORDER BY Date DESC LIMIT " . $number;
 
     $statement = $db->prepare( $query );
     $statement->execute(  );
