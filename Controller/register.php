@@ -15,11 +15,15 @@ if(registerUser($user, $password)){
 	header("Location: PersonalBoard.php");
 	}
 	else{
-	 header("Location: Signup.php?error=" . $message);
+	 header("Location: ../View/Signup.php?error=" . $message);
 	}
 }
 else{
+<<<<<<< HEAD
+	header("Location: ../View/Signup.php");
+=======
 	header("Location: Signup.php");
+>>>>>>> origin/master
 	
 }
 
