@@ -20,7 +20,6 @@ echo "<html>";
 $frontPage = frontpage();
 
 foreach($frontPage as $post){
-	echo $post . "<br>";
 	echo "score: " . $post->score . "<br>";
 	echo "title: " . $post->title . "<br>";
 	echo "body: " . $post->body . "<br>";
