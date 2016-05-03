@@ -9,74 +9,88 @@ Example Hub
 require_once '../Model/post.php';
 require_once '../Model/user.php';
 require_once '../Model/login.php';
+require_once '../Model/helpers.php';
+
+
 
 echo "<html>";
-if(logIn("test2", "tes")){
-    echo "Successfully logged in as " . $_SESSION['username'] . "<br> Your privilege level is " . $_SESSION['role'] . "<br>";
-}
-else{
-    echo "Log in failed<br>";
-}
 
-$cId = 2;
+$frontPage = frontpage();
 
-if(isset($_SESSION['id'])){
-    $cId = $_SESSION['id'];
+foreach($frontPage as $post){
+	echo "id: " . $frontPage->getId() . "<br>";
+	echo "score: " . $frontPage->score . "<br>";
+	echo "title: " . $frontPage->title . "<br>";
+	echo "body: " . $frontPage->body . "<br>";
+	// echo "date: " . $frontPage-> . "<br><br><br>";
 }
 
-$currentUser = new User($cId); 
-echo "id: " . $currentUser->id . "<br>";
-echo "user name: " . $currentUser->userName . "<br><br><br>";
+// if(logIn("test2", "tes")){
+//     echo "Successfully logged in as " . $_SESSION['username'] . "<br> Your privilege level is " . $_SESSION['role'] . "<br>";
+// }
+// else{
+//     echo "Log in failed<br>";
+// }
 
-$mainQuestion = new Post();
-$mainQuestion->score = 2;
-$mainQuestion->title = "How do I add?";
-$mainQuestion->body = "I have always wanted to know";
-$mainQuestion->solved = 0;
-$mainQuestion->userId = 1;
-$mainQuestion->category = "Science";
-$mainQuestion->parent = 3;
+// $cId = 2;
 
-$solved = "false";
-if($mainQuestion->solved){
-    $solved = "true";
-}
+// if(isset($_SESSION['id'])){
+//     $cId = $_SESSION['id'];
+// }
+
+// $currentUser = new User($cId); 
+// echo "id: " . $currentUser->id . "<br>";
+// echo "user name: " . $currentUser->userName . "<br><br><br>";
+
+// $mainQuestion = new Post();
+// $mainQuestion->score = 2;
+// $mainQuestion->title = "How do I add?";
+// $mainQuestion->body = "I have always wanted to know";
+// $mainQuestion->solved = 0;
+// $mainQuestion->userId = 1;
+// $mainQuestion->category = "Science";
+// $mainQuestion->parent = 3;
+
+// $solved = "false";
+// if($mainQuestion->solved){
+//     $solved = "true";
+// }
 
 
-echo "id: " . $mainQuestion->getId() . "<br>";
-echo "score: " . $mainQuestion->score . "<br>";
-echo "title: " . $mainQuestion->title . "<br>";
-echo "body: " . $mainQuestion->body . "<br>";
-echo "solved: " . $solved . "<br><br><br>";
+// echo "id: " . $mainQuestion->getId() . "<br>";
+// echo "score: " . $mainQuestion->score . "<br>";
+// echo "title: " . $mainQuestion->title . "<br>";
+// echo "body: " . $mainQuestion->body . "<br>";
+// echo "solved: " . $solved . "<br><br><br>";
 
-$response = $mainQuestion->submit();
+// $response = $mainQuestion->submit();
 
-if($response){
-	echo "Successful submission " . $response;
-}
-else{
-	echo "Submission failed";
-}
+// if($response){
+// 	echo "Successful submission " . $response;
+// }
+// else{
+// 	echo "Submission failed";
+// }
 
-$pulledQuestion = new Post();
-$pulledQuestion->populate(3);
+// $pulledQuestion = new Post();
+// $pulledQuestion->populate(3);
 
-echo "<br><br><br>";
-echo "id: " . $pulledQuestion->getId() . "<br>";
-echo "score: " . $pulledQuestion->score . "<br>";
-echo "title: " . $pulledQuestion->title . "<br>";
-echo "body: " . $pulledQuestion->body . "<br>";
-echo "children: " . count($pulledQuestion->children) . "<br>";
-foreach($pulledQuestion->children as $child){
-    echo "child: " . $child . "<br>";
-}
+// echo "<br><br><br>";
+// echo "id: " . $pulledQuestion->getId() . "<br>";
+// echo "score: " . $pulledQuestion->score . "<br>";
+// echo "title: " . $pulledQuestion->title . "<br>";
+// echo "body: " . $pulledQuestion->body . "<br>";
+// echo "children: " . count($pulledQuestion->children) . "<br>";
+// foreach($pulledQuestion->children as $child){
+//     echo "child: " . $child . "<br>";
+// }
 
-if(registerUser("test2", "test")){
-    echo "Registration Successful";
-}
-else{
-    echo "Registration failed";
-}
+// if(registerUser("test2", "test")){
+//     echo "Registration Successful";
+// }
+// else{
+//     echo "Registration failed";
+// }
 
 echo "</html>";
 

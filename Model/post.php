@@ -19,7 +19,7 @@ Example Hub
 */
 class Post
 {
-    public $userId, $category, $score, $title, $body, $solved, $children, $parent;
+    public $userId, $category, $score, $title, $body, $solved, $children, $parent, $date;
     private $id;
 
     public function __construct( ){
@@ -31,6 +31,7 @@ class Post
         $this->children = [];
         $this->solved = 0;
         $this->parent = -1;
+        $this->date = null;
         
     }
 
@@ -109,7 +110,7 @@ class Post
             try{
                 require 'hidden/db.php';
 
-                $stmt = $db->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved) VALUES (?,?,?,?,?,?,?)");
+                $stmt = $db->prepare("INSERT INTO Post (Title, Category, Parent, UserID, Text, Score, Solved, Date) VALUES (?,?,?,?,?,?,?,now())");
                 $db->beginTransaction();
                 $stmt->bindValue(1, $this->title);
                 $stmt->bindValue(2, $this->category);
@@ -153,12 +154,12 @@ class Post
 			
 			//increment/decrement post score
 			if($vote > 0) {
-				$stmt = $db->prepare("UPDATE Post SET Score= Score+1 WHERE ID=$idPost");
+				$stmt = $db->prepare("UPDATE Post SET Score= Score+1 WHERE ID=$idPost")
 				$db->beginTransaction();
 				$db->commit();
 			}
 			else{
-				$stmt = $db->prepare("UPDATE Post SET Score= Score-1 WHERE ID=$idPost");
+				$stmt = $db->prepare("UPDATE Post SET Score= Score-1 WHERE ID=$idPost")
 				$db->beginTransaction();
 				$db->commit();
 			}
