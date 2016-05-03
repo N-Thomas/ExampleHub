@@ -1,7 +1,7 @@
 $(function(){
-	if(!flag){
+	
     $(".increment").click(function(){
-    	
+    	if(!flag){
         var count = parseInt($("~ .count", this).text());
         if($(this).hasClass("up")) {
 
@@ -16,12 +16,12 @@ $(function(){
             
             $("~ .count", this).text(count);
         }
-
+    }
         $(this).parent().addClass("bump");
 
         setTimeout(function(){
             $(this).parent().removeClass("bump");
         }, 400);
     });
-	}
+	
 });
