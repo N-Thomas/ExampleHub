@@ -65,8 +65,8 @@
             <h2>Answer</h2>
 
             <div class="vote circle" style="float:left;">
-                <div class="increment up"></div>
-                <div class="increment down"></div>
+                <div id = <?php "'up" . $x . "'" ?> class="increment up"></div>
+                <div id = <?php "'down" . $x . "'"?> class="increment down"></div>
 
                 <div class="count">0</div>
             </div>
