@@ -136,7 +136,40 @@ class Post
         return false;
 
     }
-
+	
+	//Function for user up/downvote.  Added by Aaron McGhie
+	public function vote($idPost, $idUser, $vote) {
+		try{
+			require 'hidden/db.php';
+			
+			//relationship to upvote table
+			$stmt = $db->prepare("INSERT INTO Upvotes (idPost, idUser) VALUES (?, ?)");
+			$db->begingTransaction();
+			$stmt->bindValue(1, $idPost);
+			$stmt->bindValue(2, $idUser);
+			
+			$stmt->execute();
+			$db->commit();
+			
+			//increment/decrement post score
+			if($vote > 0) {
+				$stmt = $db->prepare("UPDATE Post SET Score= Score+1 WHERE ID=$idPost")
+				$db->beginTransaction();
+				$db->commit();
+			}
+			else{
+				$stmt = $db->prepare("UPDATE Post SET Score= Score-1 WHERE ID=$idPost")
+				$db->beginTransaction();
+				$db->commit();
+			}
+			return true;
+		}
+		catch (PDOException $ex) {
+			return false;
+		}
+		return false;
+	}
+	
     public function getId(){
         return $this->id;
     }
