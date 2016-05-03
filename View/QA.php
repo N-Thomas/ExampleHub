@@ -57,8 +57,8 @@
 			<div class = "col-lg-2" id="buttons">
 				<div class="row"><h3><?php $post->score ?></h3></div>
 				<div class="row">
-					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $post->getId()."&user=".$_SESSION['id']; ?>&value=1" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></div>
-					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $post->getId()."&user=".$_SESSION['id']; ?>&value=-1" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span></div>
+					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $post->getId()."&user=".$_SESSION['id']; ?>&value=1" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a></div>
+					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $post->getId()."&user=".$_SESSION['id']; ?>&value=-1" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span></a></div>
 				</div>
 			</div>
 			<div class = "col-lg-2" id="user">
