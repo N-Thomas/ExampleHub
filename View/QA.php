@@ -69,7 +69,7 @@
                 <div    id = <?php "'up" . $x . "'" ?> class="increment up"></div>
                 <div  id = <?php "'down" . $x . "'"?> class="increment down"></div>
 
-                <div onclick = "flag = true;" class="count">0</div>
+                <div class="count">0</div>
             </div>
 			
             <div class="well well-lg" style="float:left;">

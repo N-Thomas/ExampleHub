@@ -1,7 +1,8 @@
 $(function(){
 	
     $(".increment").click(function(){
-    	
+    	if(flag) return;
+		else flag = true;
         var count = parseInt($("~ .count", this).text());
         if($(this).hasClass("up")) {
         	
