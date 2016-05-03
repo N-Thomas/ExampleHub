@@ -10,7 +10,7 @@ require '../Model/post.php';
 //generates html for each post   Written by Aaron McGhie
 $html = "";
 //next line will pull posts when model function is finished
-//$posts = (new Post())->fetchposts();
+$posts = frontpage(10);
 foreach($posts as $p){
 	$postString = <<<END
 		<li>
