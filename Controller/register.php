@@ -19,7 +19,7 @@ if(registerUser($user, $password)){
 	}
 }
 else{
-	header("Location: register.php");
+	header("Location: Signup.php");
 	
 }
 
