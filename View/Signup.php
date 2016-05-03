@@ -163,7 +163,7 @@
     }
 </script>
 
-<form onsubmit="return checkForm(this);" action="register.php" method="post" enctype="multipart/form-data">
+<form onsubmit="return checkForm(this);" action="register.php" method="post">
     <p>Username:
         <br>
         <input type="text" name="username" required="true">
