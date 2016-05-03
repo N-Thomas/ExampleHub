@@ -7,11 +7,12 @@ require_once '../Model/login.php';
 require '../Model/user.php';
 require '../Model/post.php';
 require '../Model/helpers.php';
+require_once 'verify.php';
 
 //generates html for each post   Written by Aaron McGhie
 $html = "";
 //todo replace next line with function that pulls posts by user
-$posts = frontpage(10);
+$posts = userquestions(100, $_SESSION['id']);
 foreach($posts as $p){
 	$postId = $p->getId();
 	$postString = <<<END
@@ -33,7 +34,7 @@ END;
 	$html.=$postString;
 }
 
-require_once 'verify.php';
+
 require_once '../View/PersonalBoard.php';
 
 ?>
