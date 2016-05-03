@@ -2,7 +2,7 @@
 
 require_once 'post.php';
 
-public frontpage(){
+function frontpage(){
 	$results = [];
 
 	require 'hidden/db.php';
