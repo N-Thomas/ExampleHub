@@ -158,7 +158,7 @@ class Post
 				$db->commit();
 			}
 			else{
-				$stmt = $db->prepare("UPDATE Post SET Score= Score-1 WHERE ID=$idPost")
+				$stmt = $db->prepare("UPDATE Post SET Score= Score-1 WHERE ID=$idPost");
 				$db->beginTransaction();
 				$db->commit();
 			}
