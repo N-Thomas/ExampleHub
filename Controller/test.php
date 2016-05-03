@@ -45,12 +45,12 @@ foreach($frontPage as $post){
 
 $mainQuestion = new Post();
 $mainQuestion->score = 10;
-$mainQuestion->title = "How do I add?";
-$mainQuestion->body = "I have always wanted to know";
+$mainQuestion->title = "This id a DATETIME test";
+$mainQuestion->body = "how is it displayed?";
 $mainQuestion->solved = 0;
 $mainQuestion->userId = 1;
 $mainQuestion->category = "Science";
-$mainQuestion->parent = 3;
+$mainQuestion->parent = 0;
 
 $solved = "false";
 if($mainQuestion->solved){
