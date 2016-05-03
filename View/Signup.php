@@ -126,7 +126,7 @@
                 return false;
             }
 
-            alert("You entered a valid password: " + form.pwd1.value);
+            //alert("You entered a valid password: " + form.pwd1.value);
             return true;
 
         }

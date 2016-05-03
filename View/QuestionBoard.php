@@ -35,6 +35,7 @@
         form {
             text-align: center;
         }
+
     </style>
 </head>
 <body>
@@ -60,7 +61,9 @@
 </nav>
 
 <h2 align="center">Question Board</h2>
-
+<div id="howmany" align="center">
+Show How Many Questions? <input type="text" name="howmany" value="10" form="usrform">
+</div>
 <ul>
     <?php 
 		echo $html;
@@ -69,8 +72,10 @@
 
 
 <h2 align="center">Post Your Question</h2>
+<div align="center">
 <label for= "title">Title</label>
 <input type=text required = true; name="title" form="usrform">
+</div>
 <textarea rows="8" cols="125" name="Question" form="usrform" required = "true">
     Enter your question...
 </textarea>

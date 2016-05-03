@@ -65,8 +65,10 @@
 
 
 <h2 align="center">Post Your Question</h2>
+<div align="center">
 <label for= "title">Title</label>
 <input type=text required = true; name="title" form="usrform">
+</div>
 <textarea rows="8" cols="125" name="Question" form="usrform" required = "true">
     Enter your question...
 </textarea>
