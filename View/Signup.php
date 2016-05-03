@@ -180,7 +180,11 @@
     </p>
 
     <p>
+<<<<<<< HEAD
         <input name="register" type="submit">
+=======
+        <input name="register" type="submit" value="Submit">
+>>>>>>> origin/master
     </p>
 </form>
 

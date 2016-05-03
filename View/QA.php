@@ -89,6 +89,8 @@ Enter your answer...
 </textarea>
 
 <form action="processAnswer.php" method = "post" id="usrform">
+	<input type="hidden"  name = "category" value = <?php echo $post->category; ?> >
+	<input type="hidden"  name = "parent" value = <?php echo $post->id;?> >
     <input type="submit">
 </form>
 
