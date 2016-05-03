@@ -70,12 +70,12 @@
 
                 <div class="count">0</div>
             </div>
-
+			
             <div class="well well-lg" style="float:left;">
                 <?php
                 $p = new Post();
                 $p->populate($post->children[$x]);
-                 var_dump($p);?>
+                 echo p->body;?>
             </div>
 
 
