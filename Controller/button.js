@@ -1,6 +1,6 @@
 $(function(){
     $(".increment").click(function(){
-    	$(this).parent().disable = true;
+    	$(this).parent().disabled = true;
         var count = parseInt($("~ .count", this).text());
         if($(this).hasClass("up")) {
 
