@@ -78,9 +78,9 @@
 <fieldset data-role="controlgroup" data-type="horizontal" align="center">
     <legend>Math or science?:</legend>
     <label for="Math">Math</label>
-    <input type="radio" name="mathorsci" id="math" value="math" form="usrform" checked>
+    <input type="radio" name="mathorsci" id="math" value="Math" form="usrform" checked>
     <label for="Science">Science</label>
-    <input type="radio" name="mathorsci" id="science" value="science" form="usrform">
+    <input type="radio" name="mathorsci" id="science" value="Science" form="usrform">
 </fieldset>
 
 
