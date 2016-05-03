@@ -75,7 +75,7 @@
                 <?php
                 $p = new Post();
                 $p->populate($post->children[$x]);
-                 echo p->body;?>
+                 echo $p->body;?>
             </div>
 
 
