@@ -17,7 +17,7 @@ require_once '../Model/helpers.php';
 
 echo "<html>";
 
-$frontPage = userquestions(10, 3);
+$frontPage = userquestions(10, 1);
 
 foreach($frontPage as $post){
 	echo "score: " . $post->score . "<br>";
