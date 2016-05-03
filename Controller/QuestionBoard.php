@@ -18,10 +18,12 @@ foreach($posts as $p){
             <div class="container">
                 <h2>$p->category</h2>
                 <div class="well">
-					<div class = "col-lg-10">$p->title</div>
-				
-					<div class = "col-lg-2">
-					<a href = "QA.php?id=$postId" class = "btn btn-default">View Question</a>
+					<div class = "row">
+						<div class = "col-lg-10">$p->title</div>
+					
+						<div class = "col-lg-2">
+						<a href = "QA.php?id=$postId" class = "btn btn-default">View Question</a>
+						</div>
 					</div>
 				</div>
 			</div>
