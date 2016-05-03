@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>var flag = false;</script>
-    <script src="button.js"></script>
 
     <style>
         body {
@@ -54,9 +52,27 @@
 
 <div class="container">
     <h2>Question: <?php echo $post->title?></h2>
-    <div class="well"><?php echo $post->body;?></div>
+    <div class="well">
+		<div class ="row">
+			<div class = "col-lg-2" id="buttons">
+				<div class="row"><h3><?php $post->score ?></h3></div>
+				<div class="row">
+					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $post->id."&user=".$_SESSION['id']; ?>&value=1" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></div>
+					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $post->id."&user=".$_SESSION['id']; ?>&value=-1" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span></div>
+				</div>
+			</div>
+			<div class = "col-lg-2" id="user">
+				<h3><?php 
+					$u = new User($post->userId);
+					echo $u->userName;
+				?></h3>
+			</div>
+			<div class = "col-lg-8" id = "body">
+			<?php echo $post->body;?>
+			</div>
+		</div>
        
-</div>
+	</div>
 <ul>
     
 	
@@ -64,20 +80,23 @@
     <li>
         <div class="container">
             <h2>Answer</h2>
-
-            <div class="vote circle" style="float:left;">
-                <div    id = <?php "'up" . $x . "'" ?> class="increment up"></div>
-                <div  id = <?php "'down" . $x . "'"?> class="increment down"></div>
-
-                <div class="count">0</div>
-            </div>
 			
-            <div class="well well-lg" style="float:left;">
-                <?php
+			<div class="well well-lg" style="float:left;">
+			<?php
                 $p = new Post();
                 $p->populate($post->children[$x]);
                  echo $p->body;?>
-            </div>
+				<div class ="row">
+					<div class = "col-lg-2" id="buttons">
+					</div>
+					<div class = "col-lg-2" id="user">
+					</div>
+					<div class = "col-lg-8" id = "body">
+					<?php echo $p->body;?>
+					</div>
+				</div>
+			   
+			</div>
 
 
         </div>

@@ -32,6 +32,7 @@ class Post
         $this->solved = 0;
         $this->parent = -1;
         $this->date = "";
+		$this->userId = 0;
         
     }
 
