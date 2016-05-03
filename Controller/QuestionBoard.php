@@ -12,7 +12,7 @@ $html = "";
 //next line will pull posts when model function is finished
 //$posts = (new Post())->fetchposts();
 foreach($posts as $p){
-	$postString <<<END
+	$postString = <<<END
 		<li>
             <div class="container">
                 <h2>$p->category</h2>
