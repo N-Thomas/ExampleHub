@@ -20,9 +20,7 @@ foreach($posts as $p){
                 <div class="well">$p->title</div>
             </div>
         </li>
-        <form action="QA.php?id=$postId">
-            <input type="submit" value="View Question">
-        </form>
+        <a href = "QA.php?id=$postId" class = "btn btn-default">View Question</a>
 END;
 	$html.=$postString;
 }
