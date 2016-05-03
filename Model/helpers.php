@@ -2,11 +2,10 @@
 
 require_once 'post.php';
 
-function frontpage(){
+function frontpage( $number ){
 	$results = [];
 
 	require 'hidden/db.php';
-	$number = 10; //TODO set this through input
 	$query = "SELECT ID FROM Post WHERE Parent=0 ORDER BY Score DESC, Date DESC LIMIT " . $number;
 
 	$statement = $db->prepare( $query );
