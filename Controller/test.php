@@ -5,7 +5,9 @@ cs4540 - Web Systems
 4/17/2016
 Example Hub
 */
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once '../Model/post.php';
 require_once '../Model/user.php';
 require_once '../Model/login.php';

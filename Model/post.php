@@ -164,6 +164,7 @@ class Post
 				$db->commit();
 			}
 			return true;
+			//small change
 		}
 		catch (PDOException $ex) {
 			return false;
