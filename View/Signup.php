@@ -15,9 +15,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="button.js"></script>
+
+
+
+    <style>
+        input[type=text] {
+            background-color: white;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding-left: 40px;
+        }
+        body {
+            background-color: rgba(35, 35, 36, 0.18);
+        }
+        textarea
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
 
     <script type="text/javascript">
 
@@ -30,7 +55,7 @@
          */
         function checkForm(form)
         {
-            if(form.username1.value == "")
+            if(form.username.value == "")
             {
                 alert("Error: Username cannot be blank!");
                 form.username.focus();
@@ -40,7 +65,7 @@
 
             re = /^\w+$/;
 
-            if(!re.test(form.username1.value))
+            if(!re.test(form.username.value))
             {
                 alert("Error: Username must contain only letters, numbers and underscores!");
                 form.username.focus();
@@ -61,16 +86,9 @@
                 return false;
             }
 
-            if (form.username1.value != form.username2.value)
+            if(form.pwd1.value.length < 6)
             {
-                alert("Error: Usernames don't match");
-                form.username1.focus();
-                return false;
-            }
-
-            if(form.pwd1.value.length < 8)
-            {
-                alert("Error: Password must contain at least eight characters!");
+                alert("Error: Password must contain at least six characters!");
                 form.pwd1.focus();
                 return false;
             }
@@ -107,32 +125,12 @@
                 form.pwd1.focus();
                 return false;
             }
+
+            alert("You entered a valid password: " + form.pwd1.value);
             return true;
 
         }
-    </script>
-
-    <style>
-        input[type=text] {
-            background-color: white;
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            padding-left: 40px;
-        }
-        body {
-            background-color: rgba(35, 35, 36, 0.18);
-        }
-        textarea
-        {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        form {
-            text-align: center;
-        }
-    </style>
+        </script>
 
 </head>
 
@@ -163,7 +161,7 @@
     }
 </script>
 
-<form onsubmit="return checkForm(this);" action="register.php" method="post">
+<form onsubmit="return checkForm(this);" action="../Controller/register.php" method="post">
     <p>Username:
         <br>
         <input type="text" name="username" required="true">
@@ -182,7 +180,7 @@
     </p>
 
     <p>
-        <input name="register" type="submit" value="Register">
+        <input name="register" type="submit">
     </p>
 </form>
 
