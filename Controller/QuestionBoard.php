@@ -17,10 +17,15 @@ foreach($posts as $p){
 		<li>
             <div class="container">
                 <h2>$p->category</h2>
-                <div class="well">$p->title</div>
-            </div>
-        </li>
-        <a href = "QA.php?id=$postId" class = "btn btn-default">View Question</a>
+                <div class="well">
+					<div class = "col-lg-10">$p->title</div>
+				
+					<div class = "col-lg-2">
+					<a href = "QA.php?id=$postId" class = "btn btn-default">View Question</a>
+					</div>
+				</div>
+			</div>
+		</li>
 END;
 	$html.=$postString;
 }
