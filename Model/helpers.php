@@ -7,7 +7,7 @@ function frontpage(){
 
 	require 'hidden/db.php';
 	$number = 10; //TODO set this through input
-	$query = "SELECT top 10 ID FROM Post WHERE Parent=0 ORDER BY Score DESC, Date DESC";
+	$query = "SELECT 10 ID FROM Post WHERE Parent=0 ORDER BY Score DESC, Date DESC";
 
 	$statement = $db->prepare( $query );
     $statement->execute(  );
