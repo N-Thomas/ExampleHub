@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -13,10 +14,10 @@ require_once '../Model/login.php';
 $username = strip_tags($_POST['username']);//prevent sql injection.
 $password = strip_tags($_POST['password']);
 
-//echo $username."us";
+
 $username = stripslashes($username);
 $password = stripslashes($password);
-//echo $username."us";
+
 
 if(login($username, $password)){
 
