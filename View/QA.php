@@ -70,8 +70,8 @@
             		$(this).parent().children()[1].disabled = true;
                 }" id = <?php "'up" . $x . "'" ?> class="increment up"></div>
                 <div onclick= "function(this){
-                	$(this).parent().children()[0].disabled = true;
-            		$(this).parent().children()[1].disabled = true;
+                	this.parent().children()[0].disabled = true;
+            		this.parent().children()[1].disabled = true;
                 }" id = <?php "'down" . $x . "'"?> class="increment down"></div>
 
                 <div class="count">0</div>
