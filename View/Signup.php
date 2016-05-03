@@ -182,7 +182,7 @@
     </p>
 
     <p>
-        <input name="register" type="submit" value="Register">
+        <input name="register" type="submit" value="Submit">
     </p>
 </form>
 
