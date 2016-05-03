@@ -6,22 +6,28 @@ error_reporting(E_ALL);
 require_once '../Model/login.php';
 require '../Model/user.php';
 require '../Model/post.php';
+require '../Model/helpers.php';
 
 //generates html for each post   Written by Aaron McGhie
 $html = "";
-//next line will pull posts when model function is finished
-//$posts = (new Post())->fetchposts();
+$posts = frontpage(10);
 foreach($posts as $p){
+	$postId = $p->getId();
 	$postString = <<<END
 		<li>
             <div class="container">
                 <h2>$p->category</h2>
-                <div class="well">$p->title</div>
-            </div>
-        </li>
-        <form action="QA.php?id=$p->id">
-            <input type="submit" value="View Question">
-        </form>
+                <div class="well">
+					<div class = "row">
+						<div class = "col-lg-10">$p->title</div>
+					
+						<div class = "col-lg-2">
+						<a href = "QA.php?id=$postId" class = "btn btn-default">View Question</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
 END;
 	$html.=$postString;
 }

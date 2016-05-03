@@ -31,7 +31,7 @@ class Post
         $this->children = [];
         $this->solved = 0;
         $this->parent = -1;
-        $this->date = null;
+        $this->date = "";
         
     }
 
@@ -81,6 +81,7 @@ class Post
             $this->solved = $result['Solved'];
             $this->date = $result['Date'];
             $this->parent = $result['Parent'];
+			$this->category = $result['Category'];
             $this->id = $fetch;
 
             $query = "SELECT * FROM Post WHERE Parent='" . $this->id . "'";   //TODO: select only id
