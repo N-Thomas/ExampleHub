@@ -62,17 +62,9 @@
 <h2 align="center">Question Board</h2>
 
 <ul>
-    <?php for ($x = 0; $x <= 2; $x++): ?>
-        <li>
-            <div class="container">
-                <h2>Math/Science</h2>
-                <div class="well">Some question #<?php echo $x; ?> </div>
-            </div>
-        </li>
-        <form action="QA.php">
-            <input type="submit" value="View Question">
-        </form>
-    <?php endfor; ?>
+    <?php 
+		echo $html;
+	?>
 </ul>
 
 
