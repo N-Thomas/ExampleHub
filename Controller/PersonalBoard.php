@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 require_once '../Model/login.php';
 require '../Model/user.php';
 require '../Model/post.php';
+require '../Model/helpers.php';
 
 //generates html for each post   Written by Aaron McGhie
 $html = "";
