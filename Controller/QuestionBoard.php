@@ -10,7 +10,6 @@ require '../Model/helpers.php';
 
 //generates html for each post   Written by Aaron McGhie
 $html = "";
-//next line will pull posts when model function is finished
 $posts = frontpage(10);
 foreach($posts as $p){
 	$postString = <<<END
@@ -20,7 +19,7 @@ foreach($posts as $p){
                 <div class="well">$p->title</div>
             </div>
         </li>
-        <form action="QA.php?id=$p->id">
+        <form action="QA.php?id=$p->getId()">
             <input type="submit" value="View Question">
         </form>
 END;
