@@ -24,7 +24,7 @@ foreach($frontPage as $post){
 	echo "score: " . $post->score . "<br>";
 	echo "title: " . $post->title . "<br>";
 	echo "body: " . $post->body . "<br>";
-	echo "date: " . $post->date . "<br><br><br>";
+	// echo "date: " . $post->date . "<br><br><br>";
 }
 
 // if(logIn("test2", "tes")){
