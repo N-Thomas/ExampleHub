@@ -31,7 +31,7 @@ class Post
         $this->children = [];
         $this->solved = 0;
         $this->parent = -1;
-        $this->date = null;
+        $this->date = "";
         
     }
 

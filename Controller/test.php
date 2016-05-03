@@ -23,7 +23,7 @@ foreach($frontPage as $post){
 	echo "score: " . $post->score . "<br>";
 	echo "title: " . $post->title . "<br>";
 	echo "body: " . $post->body . "<br>";
-	// echo "date: " . $post->date . "<br><br><br>";
+	echo "date: " . $post->date . "<br><br><br>";
 }
 
 // if(logIn("test2", "tes")){
@@ -43,19 +43,19 @@ foreach($frontPage as $post){
 // echo "id: " . $currentUser->id . "<br>";
 // echo "user name: " . $currentUser->userName . "<br><br><br>";
 
-// $mainQuestion = new Post();
-// $mainQuestion->score = 2;
-// $mainQuestion->title = "How do I add?";
-// $mainQuestion->body = "I have always wanted to know";
-// $mainQuestion->solved = 0;
-// $mainQuestion->userId = 1;
-// $mainQuestion->category = "Science";
-// $mainQuestion->parent = 3;
+$mainQuestion = new Post();
+$mainQuestion->score = 10;
+$mainQuestion->title = "How do I add?";
+$mainQuestion->body = "I have always wanted to know";
+$mainQuestion->solved = 0;
+$mainQuestion->userId = 1;
+$mainQuestion->category = "Science";
+$mainQuestion->parent = 3;
 
-// $solved = "false";
-// if($mainQuestion->solved){
-//     $solved = "true";
-// }
+$solved = "false";
+if($mainQuestion->solved){
+    $solved = "true";
+}
 
 
 // echo "id: " . $mainQuestion->getId() . "<br>";
@@ -64,14 +64,14 @@ foreach($frontPage as $post){
 // echo "body: " . $mainQuestion->body . "<br>";
 // echo "solved: " . $solved . "<br><br><br>";
 
-// $response = $mainQuestion->submit();
+$response = $mainQuestion->submit();
 
-// if($response){
-// 	echo "Successful submission " . $response;
-// }
-// else{
-// 	echo "Submission failed";
-// }
+if($response){
+	echo "Successful submission " . $response;
+}
+else{
+	echo "Submission failed";
+}
 
 // $pulledQuestion = new Post();
 // $pulledQuestion->populate(3);
