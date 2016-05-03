@@ -23,7 +23,7 @@ foreach($posts as $p){
             <input type="submit" value="View Question">
         </form>
 END;
-	$html.=$postString
+	$html.=$postString;
 }
 
 
