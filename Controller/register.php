@@ -19,11 +19,7 @@ if(registerUser($user, $password)){
 	}
 }
 else{
-<<<<<<< HEAD
-	header("Location: ../View/Signup.php");
-=======
 	header("Location: Signup.php");
->>>>>>> origin/master
 	
 }
 
