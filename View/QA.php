@@ -66,8 +66,8 @@
 
             <div class="vote circle" style="float:left;">
                 <div  onclick= "function(this){
-                	$(this).parent().children()[0].disabled = true;
-            		$(this).parent().children()[1].disabled = true;
+                	this.parent().children()[0].disabled = true;
+            		this.parent().children()[1].disabled = true;
                 }" id = <?php "'up" . $x . "'" ?> class="increment up"></div>
                 <div onclick= "function(this){
                 	this.parent().children()[0].disabled = true;
