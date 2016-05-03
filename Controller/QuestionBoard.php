@@ -12,6 +12,7 @@ require '../Model/helpers.php';
 $html = "";
 $posts = frontpage(10);
 foreach($posts as $p){
+	$postId = $p->getId();
 	$postString = <<<END
 		<li>
             <div class="container">
@@ -19,7 +20,7 @@ foreach($posts as $p){
                 <div class="well">$p->title</div>
             </div>
         </li>
-        <form action="QA.php?id=$p->getId()">
+        <form action="QA.php?id=$postId">
             <input type="submit" value="View Question">
         </form>
 END;
