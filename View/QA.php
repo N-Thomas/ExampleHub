@@ -83,7 +83,7 @@
             <h2>Answer</h2>
 			<div class="row">
 			<div class="col-lg-12">
-			<div class="well well-lg" style="float:left;">
+			<div class="well">
 			<?php
                 $p = new Post();
                 $p->populate($post->children[$x]);

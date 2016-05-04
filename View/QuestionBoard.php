@@ -61,9 +61,9 @@
 </nav>
 
 <h2 align="center">Question Board</h2>
-<div id="howmany" align="center">
+<!--<div id="howmany" align="center">
 Show How Many Questions? <input type="text" name="howmany" value="10" form="usrform">
-</div>
+</div>-->
 <ul>
     <?php 
 		echo $html;
