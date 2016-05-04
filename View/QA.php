@@ -87,14 +87,23 @@
                 $p->populate($post->children[$x]);
 			?>
 				<div class ="row">
-					<div class = "col-lg-2" id="buttons">
-					</div>
-					<div class = "col-lg-2" id="user">
-					</div>
-					<div class = "col-lg-8" id = "body">
-					<?php echo $p->body;?>
-					</div>
+			<div class = "col-lg-2" id="buttons">
+				<div class="row"><h3><?php echo $p->score ?></h3></div>
+				<div class="row">
+					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $p->getId()."&user=".$_SESSION['id']; ?>&value=1" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span></a></div>
+					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $p->getId()."&user=".$_SESSION['id']; ?>&value=-1" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-minus"></span></a></div>
 				</div>
+			</div>
+			<div class = "col-lg-2" id="user">
+				<h3><?php 
+					$u = new User($p->userId);
+					echo $u->userName;
+				?></h3>
+			</div>
+			<div class = "col-lg-8" id = "body">
+			<?php echo $p->body;?>
+			</div>
+		</div>
 			   
 			</div>
 
