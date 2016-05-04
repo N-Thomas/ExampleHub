@@ -145,6 +145,15 @@ class Post
 		try{
 			require 'hidden/db.php';
 			
+			//checks if relationship already exists
+			$query = "SELECT * FROM Upvotes WHERE idPost=? AND idUser=?";
+
+            $statement = $db->prepare( $query );
+            $statement->execute(array($idPost, $idUser));
+
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+			if($result) return false;
+			
 			//relationship to upvote table
 			$stmt = $db->prepare("INSERT INTO Upvotes (idPost, idUser) VALUES (?, ?)");
 			$db->beginTransaction();
