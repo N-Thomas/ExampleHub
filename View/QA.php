@@ -55,17 +55,20 @@
     <div class="well">
 		<div class ="row">
 			<div class = "col-lg-2" id="buttons">
-				<div class="row"><h3><?php echo $post->score ?></h3></div>
+				<div class="row"><h3 align="center"><?php echo $post->score ?></h3></div>
 				<div class="row">
 					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $post->getId()."&user=".$_SESSION['id']; ?>&value=1" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span></a></div>
 					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $post->getId()."&user=".$_SESSION['id']; ?>&value=-1" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-minus"></span></a></div>
 				</div>
 			</div>
 			<div class = "col-lg-2" id="user">
-				<h3><?php 
+				<ul>
+				<li>User:<?php 
 					$u = new User($post->userId);
 					echo $u->userName;
-				?></h3>
+				?></li>
+				<li>Date:<?php echo $post->date; ?></li>
+				</ul>
 			</div>
 			<div class = "col-lg-8" id = "body">
 			<?php echo $post->body;?>
@@ -88,17 +91,20 @@
 			?>
 				<div class ="row">
 			<div class = "col-lg-2" id="buttons">
-				<div class="row"><h3><?php echo $p->score ?></h3></div>
+				<div class="row"><h3 align = "center"><?php echo $p->score ?></h3></div>
 				<div class="row">
 					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $p->getId()."&user=".$_SESSION['id']; ?>&value=1" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span></a></div>
 					<div class = "col-lg-6"><a href = "vote.php?id=<?php echo $p->getId()."&user=".$_SESSION['id']; ?>&value=-1" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-minus"></span></a></div>
 				</div>
 			</div>
 			<div class = "col-lg-2" id="user">
-				<h3><?php 
+				<ul>
+				<li>User:<?php 
 					$u = new User($p->userId);
 					echo $u->userName;
-				?></h3>
+				?></li>
+				<li>Date:<?php echo $post->date; ?></li>
+				</ul>
 			</div>
 			<div class = "col-lg-8" id = "body">
 			<?php echo $p->body;?>
