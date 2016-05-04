@@ -61,14 +61,19 @@
 </nav>
 
 <h2 align="center">Question Board</h2>
-<!--<div id="howmany" align="center">
-Show How Many Questions? <input type="text" name="howmany" value="10" form="usrform">
-</div>-->
+<div id="howmany" align="center">
+<Form id = "qcount" action = "" method = "POST">
+Show How Many Questions? <input type="text" name="howmany" value="10" form="qcount">
+<input type = "submit">
+</Form>
+</div>
 <ul>
     <?php 
 		echo $html;
 	?>
 </ul>
+
+
 
 
 <h2 align="center">Post Your Question</h2>

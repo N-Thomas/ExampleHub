@@ -10,7 +10,11 @@ require '../Model/helpers.php';
 
 //generates html for each post   Written by Aaron McGhie
 $html = "";
-$posts = frontpage(10);
+$n = 10;
+if(isset($_POST['howmany'])){
+	$n = $_POST['howmany'];
+}
+$posts = frontpage($n);
 foreach($posts as $p){
 	$postId = $p->getId();
 	$postString = <<<END
