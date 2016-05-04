@@ -77,9 +77,9 @@
        
 	</div>
     
-	
+	<div class="container">
     <?php for ($x = 0; $x < count($post->children); $x++): ?>
-        <div class="container">
+        
             <h2>Answer</h2>
 			
 			<div class="well well-lg" style="float:left;">
@@ -112,9 +112,9 @@
 			</div>
 
 
-        </div>
+        
     <?php endfor; ?>
- 
+ </div>
 
 <h2 align="center">Your Answer</h2>
 
