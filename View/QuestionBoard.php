@@ -63,7 +63,7 @@
 <h2 align="center">Question Board</h2>
 <div id="howmany" align="center">
 <Form id = "qcount" action = "" method = "POST">
-Show How Many Questions? <input type="text" name="howmany" value="10" form="qcount">
+Show How Many Questions? <input type="text" name="howmany" value= <?php echo $n ?> >
 <input type = "submit">
 </Form>
 </div>
