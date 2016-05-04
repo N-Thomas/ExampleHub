@@ -147,7 +147,7 @@ class Post
 			
 			//relationship to upvote table
 			$stmt = $db->prepare("INSERT INTO Upvotes (idPost, idUser) VALUES (?, ?)");
-			$db->begingTransaction();
+			$db->beginTransaction();
 			$stmt->bindValue(1, $idPost);
 			$stmt->bindValue(2, $idUser);
 			
@@ -157,19 +157,17 @@ class Post
 			//increment/decrement post score
 			if($vote > 0) {
 				$stmt = $db->prepare("UPDATE Post SET Score= Score+1 WHERE ID=$idPost");
-				$db->beginTransaction();
-				$db->commit();
+				$stmt->execute();
 			}
 			else{
 				$stmt = $db->prepare("UPDATE Post SET Score= Score-1 WHERE ID=$idPost");
-				$db->beginTransaction();
-				$db->commit();
+				$stmt->execute();
 			}
 			return true;
 			//small change
 		}
 		catch (PDOException $ex) {
-			return false;
+			echo $ex;
 		}
 		return false;
 	}
