@@ -50,7 +50,7 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container-fluid">
     <h2>Question: <?php echo $post->title?></h2>
     <div class="well">
 		<div class ="row">
@@ -81,7 +81,7 @@
 	
     <?php for ($x = 0; $x < count($post->children); $x++): ?>
     <li>
-        <div class="container">
+        <div class="container-fluid">
             <h2>Answer</h2>
 			
 			<div class="well well-lg" style="float:left;">
