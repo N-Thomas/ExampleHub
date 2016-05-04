@@ -77,11 +77,12 @@
        
 	</div>
     
-	<div class="container">
+	
     <?php for ($x = 0; $x < count($post->children); $x++): ?>
-        
+        <div class="container">
             <h2>Answer</h2>
-			
+			<div class="row">
+			<div class="col-lg-12">
 			<div class="well well-lg" style="float:left;">
 			<?php
                 $p = new Post();
@@ -108,13 +109,14 @@
 			<?php echo $p->body;?>
 			</div>
 		</div>
-			   
+			  </div>
+		</div>			  
 			</div>
 
 
-        
+        </div>
     <?php endfor; ?>
- </div>
+ 
 
 <h2 align="center">Your Answer</h2>
 
